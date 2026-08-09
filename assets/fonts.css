@@ -52,6 +52,12 @@ body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select {
   font-family: "Merriweather", serif;
 }
 
+/* Use the page 126 textbook face consistently throughout every book page. */
+#content,
+#content :not(.adt-reference-a) {
+  font-family: "Merriweather", serif !important;
+}
+
 /* Keep every exercise reference "(a)" in the same classic italic form. */
 .adt-reference-a {
   font-family: "Times New Roman", Times, serif !important;
