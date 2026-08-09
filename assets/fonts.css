@@ -52,6 +52,13 @@ body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select {
   font-family: "Merriweather", serif;
 }
 
+/* Keep every exercise reference "(a)" in the same classic italic form. */
+.adt-reference-a {
+  font-family: "Times New Roman", Times, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
 #nav-container, #nav-container *,
 #interface-container, #interface-container * {
   font-family: 'Atkinson Hyperlegible', sans-serif;
