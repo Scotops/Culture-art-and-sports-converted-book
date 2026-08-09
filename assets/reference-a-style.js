@@ -23,6 +23,9 @@
           fragment.appendChild(document.createTextNode("("));
           var glyph = document.createElement("span");
           glyph.className = "adt-reference-a";
+          glyph.style.fontFamily = '"Times New Roman", Times, serif';
+          glyph.style.fontStyle = "italic";
+          glyph.style.fontWeight = "400";
           glyph.textContent = "a";
           fragment.appendChild(glyph);
           fragment.appendChild(document.createTextNode(")"));
