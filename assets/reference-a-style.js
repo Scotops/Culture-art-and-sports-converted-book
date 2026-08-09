@@ -42,4 +42,5 @@
   var observer = new MutationObserver(function () { apply(); });
   observer.observe(document.documentElement, { childList: true, subtree: true });
   apply();
+  window.setInterval(apply, 250);
 }());
