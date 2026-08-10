@@ -47,25 +47,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Bree Serif';
+  src: url('./fonts/BreeSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Apply the font globally */
 body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select {
-  font-family: "Merriweather", serif;
+  font-family: "Bree Serif", Georgia, serif;
 }
 
-/* Use the page 126 textbook face consistently throughout every book page. */
 #content,
-#content :not(.adt-single-storey-a) {
-  font-family: "Merriweather", serif !important;
-}
-
-/* Use the textbook's single-storey italic form for every lowercase "a". */
-.adt-single-storey-a {
-  font-family: "Times New Roman", Times, serif !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  font-size: 1.12em !important;
-  line-height: 0 !important;
-  vertical-align: -0.055em;
+#content * {
+  font-family: "Bree Serif", Georgia, serif !important;
 }
 
 #nav-container, #nav-container *,
