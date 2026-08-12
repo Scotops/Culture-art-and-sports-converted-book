@@ -356,7 +356,7 @@
   "pg036_im005": "Two long clay pieces for the legs.",
   "pg036_im006": "Two small clay pieces for the feet.",
   "pg036_n0016": "1. Head",
-  "pg036_n0018": "2. Trunk/abdomen",
+  "pg036_n0018": "2. Trunk / abdomen or body",
   "pg036_n0020": "3. Arms",
   "pg036_n0022": "4. Legs",
   "pg036_n0024": "5. Feet",
@@ -2594,5 +2594,17 @@
   "pg104_n0012_easy_read": "(Grade 1).",
   "pg104_n0014_easy_read": "Tanzania Institute of Education (TIE).",
   "pg104_n0015_easy_read": "(2019).",
-  "pg104_n0016_easy_read": "Teacher's guide for teaching Pre-Primary Education."
+  "pg104_n0016_easy_read": "Teacher's guide for teaching Pre-Primary Education.",
+  "pg042_n0010": "Black",
+  "pg042_n0011": "Blue",
+  "pg042_n0012": "Pink",
+  "pg042_n0013": "Red",
+  "pg042_n0014": "Green",
+  "pg042_n0015": "Yellow",
+  "pg042_n0010_easy_read": "Black",
+  "pg042_n0011_easy_read": "Blue",
+  "pg042_n0012_easy_read": "Pink",
+  "pg042_n0013_easy_read": "Red",
+  "pg042_n0014_easy_read": "Green",
+  "pg042_n0015_easy_read": "Yellow"
 }
