@@ -123,6 +123,40 @@
     <div class="relative z-50" id="nav-container"></div>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js"></script>
+    <script>
+      // Make every entry in the printed table of contents open its matching reader page.
+      document.addEventListener('DOMContentLoaded', () => {
+        const destinations = {
+          pg003_n0005: 'pg004_sec001.html', pg003_n0006: 'pg004_sec001.html',
+          pg003_n0007: 'pg006_sec001.html', pg003_n0008: 'pg006_sec001.html',
+          pg003_n0009: 'pg007_sec001.html', pg003_n0010: 'pg007_sec001.html',
+          pg003_n0011: 'pg007_sec001.html', pg003_n0012: 'pg007_sec001.html',
+          pg003_n0013: 'pg022_sec001.html', pg003_n0014: 'pg022_sec001.html',
+          pg003_n0015: 'pg022_sec001.html', pg003_n0016: 'pg022_sec001.html',
+          pg003_n0017: 'pg028_sec001.html', pg003_n0018: 'pg028_sec001.html',
+          pg003_n0019: 'pg028_sec001.html', pg003_n0020: 'pg028_sec001.html',
+          pg003_n0021: 'pg034_sec001.html', pg003_n0022: 'pg034_sec001.html',
+          pg003_n0023: 'pg034_sec001.html', pg003_n0024: 'pg034_sec001.html',
+          pg003_n0025: 'pg061_sec001.html', pg003_n0026: 'pg061_sec001.html',
+          pg003_n0027: 'pg061_sec001.html', pg003_n0028: 'pg061_sec001.html',
+          pg003_n0029: 'pg103_sec001.html', pg003_n0030: 'pg103_sec001.html',
+          pg003_n0031: 'pg104_sec001.html', pg003_n0032: 'pg104_sec001.html'
+        };
+        Object.entries(destinations).forEach(([id, href]) => {
+          const item = document.querySelector(`[data-id="${id}"]`);
+          const row = item && item.closest('.flex.items-baseline');
+          if (!row) return;
+          row.setAttribute('role', 'link');
+          row.setAttribute('tabindex', '0');
+          row.style.cursor = 'pointer';
+          const open = () => { window.location.href = href; };
+          row.addEventListener('click', open);
+          row.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(); }
+          });
+        });
+      });
+    </script>
 </body>
 
 </html>
