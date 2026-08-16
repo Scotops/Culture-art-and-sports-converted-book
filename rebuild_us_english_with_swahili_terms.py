@@ -53,8 +53,8 @@ CONTENTS_PAGE_NUMBERS = {
 # Text labels which must be spoken differently from their visual form.
 # In particular, a standalone "(i)" is a picture label, not the number one.
 SPEECH_OVERRIDES = {
-    "pg008_n0010": "Letter i.",
-    "pg008_n0015": "One. What kind of foods do you observe in picture a, b, c, d, e, f, g, h, letter i and j?",
+    "pg008_n0010": "i.",
+    "pg008_n0015": "What kind of foods do you observe in picture a, b, c, d, e, f, g, h, i and j?",
 }
 
 # These lyric and poem lines are wholly in Kiswahili.  Reading the whole line
