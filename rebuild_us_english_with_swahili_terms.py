@@ -69,7 +69,7 @@ SWAHILI_ONLY_IDS = {
 
 # Possessive Tanzania's is an English sentence construction.  Keep it as one
 # phrase so the reader never separates the final "s" into a second utterance.
-ENGLISH_ONLY_IDS = {"pg056_n0006"}
+ENGLISH_ONLY_IDS = {"pg015_n0015", "pg056_n0006"}
 
 
 def fallback_text(text_id: str) -> str:
