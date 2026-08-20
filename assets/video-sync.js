@@ -1,23 +1,16 @@
-/* Keep the page sign-language video aligned with the ADT read-aloud control. */
+/* Play a separate, muted sign-video layer alongside the ADT narration. */
 (() => {
-  // Enable both panels before the reader runtime starts. The reader's own
-  // autoplay setting then starts narration without the learner having to
-  // reset the sound panel; the actual narration start triggers the matching
-  // page video below.
-  const enableAtStartup = key => {
-    try { localStorage.setItem(key, "true"); } catch (_) {}
-    // The reader falls back to cookies if storage is unavailable, so preserve
-    // the same startup state in both supported stores.
-    try { document.cookie = `${key}=true; path=/; max-age=31536000`; } catch (_) {}
-  };
-  enableAtStartup("signLanguageMode");
-  enableAtStartup("readAloudMode");
-
-  let narrationStarted = false;
+  const YEAR = 31536000;
+  let signClone = null;
   let narrationRequested = false;
-  let pauseTimer = null;
   let narrationAudio = null;
+  let pauseTimer = null;
   const trackedNarrations = new WeakSet();
+
+  const setReaderMode = key => {
+    try { localStorage.setItem(key, "true"); } catch (_) {}
+    try { document.cookie = `${key}=true; path=/; max-age=${YEAR}`; } catch (_) {}
+  };
   const sessionHasStarted = () => {
     try { return sessionStorage.getItem("adtNarrationStarted") === "true"; } catch (_) { return false; }
   };
@@ -25,35 +18,73 @@
     try { sessionStorage.setItem("adtNarrationStarted", "true"); } catch (_) {}
   };
 
-  const signVideo = () => [...document.querySelectorAll("video")].find(video =>
-    /content\/i18n\/[^/]+\/video\//.test(video.currentSrc || video.src)
-  );
+  // Show the sign panel from the beginning. The learner's first Play click
+  // begins both streams; later pages resume from the stored reading session.
+  setReaderMode("signLanguageMode");
+  setReaderMode("readAloudMode");
 
-  const pauseVideo = () => {
-    const video = signVideo();
-    if (video && !video.paused) video.pause();
+  const isSourceVideo = media => media instanceof HTMLVideoElement &&
+    /\/content\/i18n\/[^/]+\/video\/page_\d+\.mp4(?:[?#]|$)/.test(media.currentSrc || media.src || "") &&
+    !media.dataset.signLanguageClone;
+  const isNarrationAudio = media => media instanceof HTMLAudioElement &&
+    /\/content\/i18n\/[^/]+\/audio\//.test(media.currentSrc || media.src || "");
+
+  const playSignVideo = () => {
+    if (!signClone) return;
+    signClone.play().catch(() => {});
+  };
+  const pauseSignVideo = () => {
+    if (signClone && !signClone.paused) signClone.pause();
   };
 
-  const startVideo = () => {
-    const video = signVideo();
-    if (!video) return;
-    if (!narrationStarted) {
-      narrationStarted = true;
-      try { video.currentTime = 0; } catch (_) {}
-    }
-    video.play().catch(() => {});
+  // The ADT's React component pauses its own sign video when voice mode is
+  // selected. Hide that lifecycle video and render an independent clone in a
+  // shadow root, just as the reference book does. React cannot pause or
+  // receive play events from the clone, while its layout stays unchanged.
+  const createIndependentVideo = source => {
+    if (!isSourceVideo(source) || source.dataset.signLanguageSource) return;
+    source.dataset.signLanguageSource = "true";
+    source.defaultMuted = true;
+    source.muted = true;
+    source.volume = 0;
+    source.pause();
+    source.removeAttribute("autoplay");
+    source.style.display = "none";
+
+    const clone = source.cloneNode(true);
+    clone.dataset.signLanguageClone = "true";
+    clone.defaultMuted = true;
+    clone.muted = true;
+    clone.volume = 0;
+    clone.setAttribute("muted", "");
+    clone.removeAttribute("autoplay");
+    clone.style.width = "100%";
+    clone.style.height = "calc(100% - 1.5rem)";
+    clone.style.objectFit = "contain";
+    clone.style.background = "black";
+
+    const host = document.createElement("div");
+    host.dataset.signLanguageHost = "true";
+    host.style.width = "100%";
+    host.style.height = "100%";
+    source.insertAdjacentElement("afterend", host);
+    host.attachShadow({ mode: "open" }).appendChild(clone);
+    clone.load();
+    signClone = clone;
   };
 
-  // The ADT creates its narration with `new Audio`, which is not attached to
-  // the page DOM. Hook the native media methods before the reader runtime is
-  // loaded, so the sign video follows the actual narration media rather than
-  // merely following a button click.
+  const scan = root => {
+    if (root instanceof HTMLVideoElement) createIndependentVideo(root);
+    if (root?.querySelectorAll) root.querySelectorAll("video").forEach(createIndependentVideo);
+  };
+
   const nativePlay = HTMLMediaElement.prototype.play;
   const nativePause = HTMLMediaElement.prototype.pause;
-  const isNarrationAudio = media => media instanceof HTMLAudioElement &&
-    /\/content\/i18n\/[^/]+\/audio\//.test(media.currentSrc || media.src);
-
   HTMLMediaElement.prototype.play = function (...args) {
+    if (isSourceVideo(this)) {
+      createIndependentVideo(this);
+      return Promise.resolve();
+    }
     const result = nativePlay.apply(this, args);
     if (isNarrationAudio(this)) {
       narrationAudio = this;
@@ -61,111 +92,64 @@
       if (!trackedNarrations.has(this)) {
         trackedNarrations.add(this);
         this.addEventListener("ended", () => {
-          // A following item normally begins immediately. Only stop the video
-          // when this was the final narration item.
           pauseTimer = setTimeout(() => {
             if (narrationAudio === this && this.paused) {
               narrationRequested = false;
-              narrationStarted = false;
-              pauseVideo();
+              pauseSignVideo();
             }
           }, 1500);
         });
       }
       Promise.resolve(result).then(() => {
         clearTimeout(pauseTimer);
-        // The reader sets its internal mode to "text to speech" immediately
-        // after narration begins, and that built-in mode change pauses the
-        // sign panel. Start on the next frame after that pause so narration
-        // and signing run together instead of cancelling one another.
-        setTimeout(startVideo, 80);
+        playSignVideo();
       }).catch(() => {});
     }
     return result;
   };
-
   HTMLMediaElement.prototype.pause = function (...args) {
-    // The stock reader tries to pause its sign panel whenever it changes to
-    // text-to-speech mode. While narration is genuinely playing, ignore that
-    // internal mode pause; an actual narration pause is handled below.
-    if (this instanceof HTMLVideoElement && this === signVideo() &&
-      (narrationRequested || (narrationAudio && !narrationAudio.paused))) {
-      return;
-    }
+    if (isSourceVideo(this)) return;
     const result = nativePause.apply(this, args);
     if (isNarrationAudio(this)) {
       pauseTimer = setTimeout(() => {
-        if (narrationAudio?.paused) {
-          pauseVideo();
-          if (narrationAudio.ended) narrationStarted = false;
-        }
-      // A completed segment is immediately replaced by the next narrated
-      // segment. Leave a generous hand-off window so video stays continuous
-      // while the next audio file is prepared; a manual pause stops at once.
+        if (narrationAudio?.paused) pauseSignVideo();
       }, this.ended ? 1500 : 80);
     }
     return result;
   };
 
-  document.addEventListener("play", event => {
-    if (!(event.target instanceof HTMLAudioElement)) return;
-    clearTimeout(pauseTimer);
-    startVideo();
-  }, true);
-
-  // Starting the video from the reader's own Play click gives it the same
-  // user gesture as the narration. This prevents an initially visible video
-  // from remaining paused until the sign panel is hidden and shown again.
   document.addEventListener("click", event => {
     const button = event.target instanceof Element
-      ? event.target.closest("button[aria-label]")
-      : null;
+      ? event.target.closest("button[aria-label]") : null;
     const label = button?.getAttribute("aria-label") || "";
     if (label === "Play" && event.isTrusted) {
-      // This is the learner's first real Play action. It authorizes the
-      // current page and all following book pages to resume automatically.
       markSessionStarted();
       narrationRequested = true;
-      startVideo();
-      setTimeout(startVideo, 100);
+      // This shares the learner's click with the video, avoiding a delayed
+      // initial frame. The narration hook above keeps it synchronized after.
+      playSignVideo();
     }
     if (label === "Stop" || /Deactivate text to speech/i.test(label)) {
       narrationRequested = false;
-      narrationStarted = false;
-      pauseVideo();
+      pauseSignVideo();
     }
   }, true);
 
-  // After the learner has pressed Play once, start each following page from
-  // its read-aloud button. The audio hook above starts the matching video only
-  // once narration has genuinely begun, so the two stay together.
   const resumeFollowingPage = () => {
     if (!sessionHasStarted()) return;
     let tries = 0;
     const resume = () => {
       const play = [...document.querySelectorAll("button[aria-label]")]
         .find(button => button.getAttribute("aria-label") === "Play");
-      if (play && !play.disabled) {
-        play.click();
-        return;
-      }
+      if (play && !play.disabled) { play.click(); return; }
       if (++tries < 30) setTimeout(resume, 150);
     };
     setTimeout(resume, 100);
   };
-  resumeFollowingPage();
 
-  document.addEventListener("pause", event => {
-    if (!(event.target instanceof HTMLAudioElement)) return;
-    // Short gaps occur between individual read-aloud items; do not break video
-    // continuity while the next item starts.
-    pauseTimer = setTimeout(() => {
-      if (![...document.querySelectorAll("audio")].some(audio => !audio.paused)) pauseVideo();
-    }, 300);
-  }, true);
-
-  new MutationObserver(() => {
-    const video = signVideo();
-    if (video && !narrationStarted) pauseVideo();
+  scan(document);
+  new MutationObserver(records => {
+    records.forEach(record => record.addedNodes.forEach(scan));
   }).observe(document.documentElement, { childList: true, subtree: true });
+  resumeFollowingPage();
 })();
