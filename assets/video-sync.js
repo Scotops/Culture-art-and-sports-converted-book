@@ -1,7 +1,17 @@
 /* Keep the page sign-language video aligned with the ADT read-aloud control. */
 (() => {
-  // Enable the built-in sign-language panel before the reader runtime starts.
-  try { localStorage.setItem("signLanguageMode", "true"); } catch (_) {}
+  // Enable both panels before the reader runtime starts. The reader's own
+  // autoplay setting then starts narration without the learner having to
+  // reset the sound panel; the actual narration start triggers the matching
+  // page video below.
+  const enableAtStartup = key => {
+    try { localStorage.setItem(key, "true"); } catch (_) {}
+    // The reader falls back to cookies if storage is unavailable, so preserve
+    // the same startup state in both supported stores.
+    try { document.cookie = `${key}=true; path=/; max-age=31536000`; } catch (_) {}
+  };
+  enableAtStartup("signLanguageMode");
+  enableAtStartup("readAloudMode");
 
   let narrationStarted = false;
   let pauseTimer = null;
