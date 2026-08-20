@@ -5,6 +5,7 @@
 
   let narrationStarted = false;
   let pauseTimer = null;
+  let narrationAudio = null;
 
   const signVideo = () => [...document.querySelectorAll("video")].find(video =>
     /content\/i18n\/[^/]+\/video\//.test(video.currentSrc || video.src)
@@ -25,6 +26,43 @@
     video.play().catch(() => {});
   };
 
+  // The ADT creates its narration with `new Audio`, which is not attached to
+  // the page DOM. Hook the native media methods before the reader runtime is
+  // loaded, so the sign video follows the actual narration media rather than
+  // merely following a button click.
+  const nativePlay = HTMLMediaElement.prototype.play;
+  const nativePause = HTMLMediaElement.prototype.pause;
+  const isNarrationAudio = media => media instanceof HTMLAudioElement &&
+    /\/content\/i18n\/[^/]+\/audio\//.test(media.currentSrc || media.src);
+
+  HTMLMediaElement.prototype.play = function (...args) {
+    const result = nativePlay.apply(this, args);
+    if (isNarrationAudio(this)) {
+      narrationAudio = this;
+      Promise.resolve(result).then(() => {
+        clearTimeout(pauseTimer);
+        startVideo();
+      }).catch(() => {});
+    }
+    return result;
+  };
+
+  HTMLMediaElement.prototype.pause = function (...args) {
+    const result = nativePause.apply(this, args);
+    if (isNarrationAudio(this)) {
+      pauseTimer = setTimeout(() => {
+        if (narrationAudio?.paused) {
+          pauseVideo();
+          if (narrationAudio.ended) narrationStarted = false;
+        }
+      // A completed segment is immediately replaced by the next narrated
+      // segment. Leave a generous hand-off window so video stays continuous
+      // while the next audio file is prepared; a manual pause stops at once.
+      }, this.ended ? 1500 : 80);
+    }
+    return result;
+  };
+
   document.addEventListener("play", event => {
     if (!(event.target instanceof HTMLAudioElement)) return;
     clearTimeout(pauseTimer);
@@ -38,21 +76,6 @@
     pauseTimer = setTimeout(() => {
       if (![...document.querySelectorAll("audio")].some(audio => !audio.paused)) pauseVideo();
     }, 300);
-  }, true);
-
-  // The ADT's narration player uses Web Audio rather than a visible <audio>
-  // element. Mirror its own controls as well, so video still starts and pauses
-  // at the same moment on every supported browser.
-  document.addEventListener("click", event => {
-    const control = event.target.closest("button");
-    const label = control?.getAttribute("aria-label") || "";
-    if (/activate text to speech|^play$/i.test(label)) {
-      clearTimeout(pauseTimer);
-      setTimeout(startVideo, 0);
-    } else if (/^pause$|^stop$|deactivate text to speech/i.test(label)) {
-      clearTimeout(pauseTimer);
-      pauseVideo();
-    }
   }, true);
 
   new MutationObserver(() => {
