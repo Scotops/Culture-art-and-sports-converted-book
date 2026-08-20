@@ -41,13 +41,24 @@
       narrationAudio = this;
       Promise.resolve(result).then(() => {
         clearTimeout(pauseTimer);
-        startVideo();
+        // The reader sets its internal mode to "text to speech" immediately
+        // after narration begins, and that built-in mode change pauses the
+        // sign panel. Start on the next frame after that pause so narration
+        // and signing run together instead of cancelling one another.
+        setTimeout(startVideo, 80);
       }).catch(() => {});
     }
     return result;
   };
 
   HTMLMediaElement.prototype.pause = function (...args) {
+    // The stock reader tries to pause its sign panel whenever it changes to
+    // text-to-speech mode. While narration is genuinely playing, ignore that
+    // internal mode pause; an actual narration pause is handled below.
+    if (this instanceof HTMLVideoElement && this === signVideo() &&
+      narrationAudio && !narrationAudio.paused) {
+      return;
+    }
     const result = nativePause.apply(this, args);
     if (isNarrationAudio(this)) {
       pauseTimer = setTimeout(() => {
