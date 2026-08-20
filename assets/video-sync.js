@@ -58,6 +58,9 @@
     clone.volume = 0;
     clone.setAttribute("muted", "");
     clone.removeAttribute("autoplay");
+    // cloneNode copies the hidden source element's inline `display: none`.
+    // Restore a normal display value so the actual signer image is visible.
+    clone.style.display = "block";
     clone.style.width = "100%";
     clone.style.height = "calc(100% - 1.5rem)";
     clone.style.objectFit = "contain";
