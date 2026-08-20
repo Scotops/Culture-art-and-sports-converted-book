@@ -1,6 +1,6 @@
 {
   "title": "Culture, Art and Sports Pupil’s Book Standard One",
-  "bundleVersion": "7",
+  "bundleVersion": "8",
   "languages": {
     "available": [
       "en-US"
@@ -8,7 +8,7 @@
     "default": "en-US"
   },
   "features": {
-    "signLanguage": false,
+    "signLanguage": true,
     "easyRead": true,
     "glossary": true,
     "eli5": false,
