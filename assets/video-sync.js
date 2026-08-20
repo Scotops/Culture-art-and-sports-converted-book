@@ -14,8 +14,10 @@
   enableAtStartup("readAloudMode");
 
   let narrationStarted = false;
+  let narrationRequested = false;
   let pauseTimer = null;
   let narrationAudio = null;
+  const trackedNarrations = new WeakSet();
 
   const signVideo = () => [...document.querySelectorAll("video")].find(video =>
     /content\/i18n\/[^/]+\/video\//.test(video.currentSrc || video.src)
@@ -49,6 +51,21 @@
     const result = nativePlay.apply(this, args);
     if (isNarrationAudio(this)) {
       narrationAudio = this;
+      narrationRequested = true;
+      if (!trackedNarrations.has(this)) {
+        trackedNarrations.add(this);
+        this.addEventListener("ended", () => {
+          // A following item normally begins immediately. Only stop the video
+          // when this was the final narration item.
+          pauseTimer = setTimeout(() => {
+            if (narrationAudio === this && this.paused) {
+              narrationRequested = false;
+              narrationStarted = false;
+              pauseVideo();
+            }
+          }, 1500);
+        });
+      }
       Promise.resolve(result).then(() => {
         clearTimeout(pauseTimer);
         // The reader sets its internal mode to "text to speech" immediately
@@ -66,7 +83,7 @@
     // text-to-speech mode. While narration is genuinely playing, ignore that
     // internal mode pause; an actual narration pause is handled below.
     if (this instanceof HTMLVideoElement && this === signVideo() &&
-      narrationAudio && !narrationAudio.paused) {
+      (narrationRequested || (narrationAudio && !narrationAudio.paused))) {
       return;
     }
     const result = nativePause.apply(this, args);
@@ -88,6 +105,26 @@
     if (!(event.target instanceof HTMLAudioElement)) return;
     clearTimeout(pauseTimer);
     startVideo();
+  }, true);
+
+  // Starting the video from the reader's own Play click gives it the same
+  // user gesture as the narration. This prevents an initially visible video
+  // from remaining paused until the sign panel is hidden and shown again.
+  document.addEventListener("click", event => {
+    const button = event.target instanceof Element
+      ? event.target.closest("button[aria-label]")
+      : null;
+    const label = button?.getAttribute("aria-label") || "";
+    if (label === "Play" || /Activate text to speech/i.test(label)) {
+      narrationRequested = true;
+      startVideo();
+      setTimeout(startVideo, 100);
+    }
+    if (label === "Stop" || /Deactivate text to speech/i.test(label)) {
+      narrationRequested = false;
+      narrationStarted = false;
+      pauseVideo();
+    }
   }, true);
 
   document.addEventListener("pause", event => {
