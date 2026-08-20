@@ -18,6 +18,12 @@
   let pauseTimer = null;
   let narrationAudio = null;
   const trackedNarrations = new WeakSet();
+  const sessionHasStarted = () => {
+    try { return sessionStorage.getItem("adtNarrationStarted") === "true"; } catch (_) { return false; }
+  };
+  const markSessionStarted = () => {
+    try { sessionStorage.setItem("adtNarrationStarted", "true"); } catch (_) {}
+  };
 
   const signVideo = () => [...document.querySelectorAll("video")].find(video =>
     /content\/i18n\/[^/]+\/video\//.test(video.currentSrc || video.src)
@@ -115,7 +121,10 @@
       ? event.target.closest("button[aria-label]")
       : null;
     const label = button?.getAttribute("aria-label") || "";
-    if (label === "Play" || /Activate text to speech/i.test(label)) {
+    if (label === "Play" && event.isTrusted) {
+      // This is the learner's first real Play action. It authorizes the
+      // current page and all following book pages to resume automatically.
+      markSessionStarted();
       narrationRequested = true;
       startVideo();
       setTimeout(startVideo, 100);
@@ -126,6 +135,25 @@
       pauseVideo();
     }
   }, true);
+
+  // After the learner has pressed Play once, start each following page from
+  // its read-aloud button. The audio hook above starts the matching video only
+  // once narration has genuinely begun, so the two stay together.
+  const resumeFollowingPage = () => {
+    if (!sessionHasStarted()) return;
+    let tries = 0;
+    const resume = () => {
+      const play = [...document.querySelectorAll("button[aria-label]")]
+        .find(button => button.getAttribute("aria-label") === "Play");
+      if (play && !play.disabled) {
+        play.click();
+        return;
+      }
+      if (++tries < 30) setTimeout(resume, 150);
+    };
+    setTimeout(resume, 100);
+  };
+  resumeFollowingPage();
 
   document.addEventListener("pause", event => {
     if (!(event.target instanceof HTMLAudioElement)) return;
