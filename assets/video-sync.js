@@ -9,6 +9,23 @@
   let pendingNarrationTimer = null;
   const trackedNarrations = new WeakSet();
 
+  const installVideoVisibilityRule = () => {
+    if (document.getElementById("adt-synchronized-sign-video-style")) return;
+    const style = document.createElement("style");
+    style.id = "adt-synchronized-sign-video-style";
+    style.textContent = `
+      video[data-sign-language-source="true"]:not([data-sign-language-clone="true"]) {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      [data-sign-language-host="true"] {
+        display: block !important;
+      }
+    `;
+    (document.head || document.documentElement).appendChild(style);
+  };
+
   const setReaderMode = key => {
     try { localStorage.setItem(key, "true"); } catch (_) {}
     try { document.cookie = `${key}=true; path=/; max-age=${YEAR}`; } catch (_) {}
@@ -25,6 +42,7 @@
   // are launched from the same call stack.
   setReaderMode("signLanguageMode");
   setReaderMode("readAloudMode");
+  installVideoVisibilityRule();
 
   const isSourceVideo = media => media instanceof HTMLVideoElement &&
     /\/content\/i18n\/[^/]+\/video\/page_\d+\.mp4(?:[?#]|$)/.test(media.currentSrc || media.src || "") &&
@@ -119,6 +137,9 @@
     source.volume = 0;
     source.pause();
     source.removeAttribute("autoplay");
+    source.hidden = true;
+    source.setAttribute("aria-hidden", "true");
+    source.tabIndex = -1;
     source.style.display = "none";
 
     const clone = source.cloneNode(true);
@@ -127,6 +148,9 @@
     clone.muted = true;
     clone.volume = 0;
     clone.setAttribute("muted", "");
+    clone.hidden = false;
+    clone.removeAttribute("aria-hidden");
+    clone.removeAttribute("tabindex");
     clone.removeAttribute("autoplay");
     // cloneNode copies the hidden source element's inline `display: none`.
     // Restore a normal display value so the actual signer image is visible.
