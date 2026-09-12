@@ -5,6 +5,8 @@
   let narrationRequested = false;
   let narrationAudio = null;
   let pauseTimer = null;
+  let pendingNarrationStart = null;
+  let pendingNarrationTimer = null;
   const trackedNarrations = new WeakSet();
 
   const setReaderMode = key => {
@@ -18,8 +20,9 @@
     try { sessionStorage.setItem("adtNarrationStarted", "true"); } catch (_) {}
   };
 
-  // Show the sign panel from the beginning. The learner's first Play click
-  // begins both streams; later pages resume from the stored reading session.
+  // Enable both reader modes before the runtime boots. Its page-open autoplay
+  // request is held briefly until the sign video is ready, then both streams
+  // are launched from the same call stack.
   setReaderMode("signLanguageMode");
   setReaderMode("readAloudMode");
 
@@ -34,7 +37,74 @@
     signClone.play().catch(() => {});
   };
   const pauseSignVideo = () => {
-    if (signClone && !signClone.paused) signClone.pause();
+    if (signClone) nativePause.call(signClone);
+  };
+
+  const nativePlay = HTMLMediaElement.prototype.play;
+  const nativePause = HTMLMediaElement.prototype.pause;
+
+  const trackNarration = audio => {
+    narrationAudio = audio;
+    narrationRequested = true;
+    if (trackedNarrations.has(audio)) return;
+    trackedNarrations.add(audio);
+    audio.addEventListener("ended", () => {
+      pauseTimer = setTimeout(() => {
+        if (narrationAudio === audio && audio.paused) {
+          narrationRequested = false;
+          pauseSignVideo();
+        }
+      }, 1500);
+    });
+  };
+
+  const monitorNarrationStart = (audio, result) => {
+    Promise.resolve(result).then(() => {
+      clearTimeout(pauseTimer);
+      playSignVideo();
+    }).catch(() => {
+      if (narrationAudio === audio) {
+        narrationRequested = false;
+        pauseSignVideo();
+        try { signClone.currentTime = 0; } catch (_) {}
+      }
+    });
+    return result;
+  };
+
+  const startNarrationAndVideo = (audio, args) => {
+    trackNarration(audio);
+    const result = nativePlay.apply(audio, args);
+    playSignVideo();
+    return monitorNarrationStart(audio, result);
+  };
+
+  const flushPendingNarration = () => {
+    if (!pendingNarrationStart) return;
+    const pending = pendingNarrationStart;
+    pendingNarrationStart = null;
+    clearTimeout(pendingNarrationTimer);
+    const result = startNarrationAndVideo(pending.audio, pending.args);
+    Promise.resolve(result).then(pending.resolve, pending.reject);
+  };
+
+  const queueNarrationUntilVideo = (audio, args) => {
+    trackNarration(audio);
+    if (pendingNarrationStart?.audio === audio) return pendingNarrationStart.promise;
+    if (pendingNarrationStart) {
+      pendingNarrationStart.reject(new DOMException("Narration changed before playback began.", "AbortError"));
+      clearTimeout(pendingNarrationTimer);
+    }
+    let resolve;
+    let reject;
+    const promise = new Promise((resolvePromise, rejectPromise) => {
+      resolve = resolvePromise;
+      reject = rejectPromise;
+    });
+    pendingNarrationStart = { audio, args, promise, resolve, reject };
+    // A page without a mapped sign video must still retain narration.
+    pendingNarrationTimer = setTimeout(flushPendingNarration, 2500);
+    return promise;
   };
 
   // The ADT's React component pauses its own sign video when voice mode is
@@ -72,8 +142,9 @@
     host.style.height = "100%";
     source.insertAdjacentElement("afterend", host);
     host.attachShadow({ mode: "open" }).appendChild(clone);
-    clone.load();
     signClone = clone;
+    clone.load();
+    flushPendingNarration();
   };
 
   const scan = root => {
@@ -81,37 +152,27 @@
     if (root?.querySelectorAll) root.querySelectorAll("video").forEach(createIndependentVideo);
   };
 
-  const nativePlay = HTMLMediaElement.prototype.play;
-  const nativePause = HTMLMediaElement.prototype.pause;
   HTMLMediaElement.prototype.play = function (...args) {
     if (isSourceVideo(this)) {
       createIndependentVideo(this);
       return Promise.resolve();
     }
-    const result = nativePlay.apply(this, args);
     if (isNarrationAudio(this)) {
-      narrationAudio = this;
-      narrationRequested = true;
-      if (!trackedNarrations.has(this)) {
-        trackedNarrations.add(this);
-        this.addEventListener("ended", () => {
-          pauseTimer = setTimeout(() => {
-            if (narrationAudio === this && this.paused) {
-              narrationRequested = false;
-              pauseSignVideo();
-            }
-          }, 1500);
-        });
-      }
-      Promise.resolve(result).then(() => {
-        clearTimeout(pauseTimer);
-        playSignVideo();
-      }).catch(() => {});
+      return signClone
+        ? startNarrationAndVideo(this, args)
+        : queueNarrationUntilVideo(this, args);
     }
-    return result;
+    return nativePlay.apply(this, args);
   };
   HTMLMediaElement.prototype.pause = function (...args) {
     if (isSourceVideo(this)) return;
+    if (isNarrationAudio(this) && pendingNarrationStart?.audio === this) {
+      const pending = pendingNarrationStart;
+      pendingNarrationStart = null;
+      clearTimeout(pendingNarrationTimer);
+      narrationRequested = false;
+      pending.reject(new DOMException("Narration was paused before playback began.", "AbortError"));
+    }
     const result = nativePause.apply(this, args);
     if (isNarrationAudio(this)) {
       pauseTimer = setTimeout(() => {
@@ -128,9 +189,6 @@
     if (label === "Play" && event.isTrusted) {
       markSessionStarted();
       narrationRequested = true;
-      // This shares the learner's click with the video, avoiding a delayed
-      // initial frame. The narration hook above keeps it synchronized after.
-      playSignVideo();
     }
     if (label === "Stop" || /Deactivate text to speech/i.test(label)) {
       narrationRequested = false;
