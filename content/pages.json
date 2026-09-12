@@ -1,7 +1,11 @@
 [
   {
-    "section_id": "pg001_sec001",
+    "section_id": "cover_front",
     "href": "index.html"
+  },
+  {
+    "section_id": "pg001_sec001",
+    "href": "pg001_sec001.html"
   },
   {
     "section_id": "pg002_sec001",
@@ -717,5 +721,9 @@
     "section_id": "pg104_sec001",
     "href": "pg104_sec001.html",
     "page_number": 98
+  },
+  {
+    "section_id": "cover_back",
+    "href": "back-cover.html"
   }
 ]

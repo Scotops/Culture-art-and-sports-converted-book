@@ -55,13 +55,28 @@
   font-display: swap;
 }
 
-/* Apply the font globally */
+/* Keep ordinary reading text light and reserve the display face for headings. */
 body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select {
-  font-family: "Bree Serif", Georgia, serif;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
 #content,
 #content * {
+  font-family: 'Atkinson Hyperlegible', sans-serif !important;
+}
+
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6,
+#content strong,
+#content b,
+#content .font-semibold,
+#content .font-bold,
+#content .font-extrabold,
+#content .font-black {
   font-family: "Bree Serif", Georgia, serif !important;
 }
 
