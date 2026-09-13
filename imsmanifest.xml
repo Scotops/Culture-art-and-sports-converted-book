@@ -183,6 +183,7 @@
       <file href="content/i18n/en-US/glossary.json" />
       <file href="content/i18n/en-US/texts.json" />
       <file href="content/i18n/en-US/timecode/timecode_output.json" />
+      <file href="content/i18n/en-US/video/page_000.mp4" />
       <file href="content/i18n/en-US/video/page_001.mp4" />
       <file href="content/i18n/en-US/video/page_002.mp4" />
       <file href="content/i18n/en-US/video/page_003.mp4" />
@@ -326,6 +327,7 @@
       <file href="content/i18n/en-US/video/page_143.mp4" />
       <file href="content/i18n/en-US/video/page_144.mp4" />
       <file href="content/i18n/en-US/video/page_145.mp4" />
+      <file href="content/i18n/en-US/video/page_146.mp4" />
       <file href="content/i18n/en-US/video/page_26.mp4" />
       <file href="content/i18n/en-US/video/page_90.mp4" />
       <file href="content/i18n/en-US/videos.json" />

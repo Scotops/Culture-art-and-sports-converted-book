@@ -168,6 +168,9 @@
     host.attachShadow({ mode: "open" }).appendChild(clone);
     signClone = clone;
     clone.load();
+    // Cover pages have no separate narration entries, so start their muted
+    // sign videos as soon as the player is created.
+    if (document.body?.hasAttribute("data-cover-page")) playSignVideo();
     flushPendingNarration();
   };
 
