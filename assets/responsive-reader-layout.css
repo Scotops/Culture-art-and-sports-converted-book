@@ -257,6 +257,141 @@ body > main {
   border-color: #2563eb !important;
 }
 
+/* Inline response path for source exercises and practical activities. */
+#content [data-adt-task-response] {
+  box-sizing: border-box;
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-column: 1 / -1;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: clamp(0.9rem, 2vw, 1.25rem);
+  border: 2px solid #93c5fd;
+  border-radius: 1rem;
+  background: #eff6ff;
+  color: #172554;
+  text-align: left;
+}
+
+#content [data-adt-task-response-field] {
+  display: grid;
+  min-width: 0;
+  gap: 0.5rem;
+}
+
+#content [data-adt-response-label],
+#content [data-adt-completion-label] {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+#content [data-adt-completion-label] {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+#content [data-adt-task-answer] {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 7rem;
+  resize: vertical;
+  padding: 0.75rem;
+  border: 2px solid #64748b;
+  border-radius: 0.65rem;
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+#content [data-adt-task-completion] {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 auto;
+  accent-color: #2563eb;
+}
+
+#content [data-adt-task-hint],
+#content [data-adt-task-feedback],
+#content [data-adt-native-edit] p {
+  margin: 0 !important;
+  font-size: 1rem !important;
+  line-height: 1.45 !important;
+}
+
+#content [data-adt-task-feedback="success"] {
+  color: #166534;
+  font-weight: 700;
+}
+
+#content [data-adt-task-feedback="error"] {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+#content [data-adt-task-actions],
+#content [data-adt-native-edit] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#content [data-adt-task-actions] :where(button, a),
+#content [data-adt-native-edit] button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+  border: 2px solid #1d4ed8;
+  border-radius: 0.65rem;
+  background: #fff;
+  color: #1e3a8a;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#content [data-adt-task-submit],
+#content [data-adt-task-continue] {
+  background: #1d4ed8 !important;
+  color: #fff !important;
+}
+
+#content [data-adt-task-actions] :where(button, a):focus-visible,
+#content [data-adt-task-answer]:focus-visible,
+#content [data-adt-task-completion]:focus-visible,
+#content [data-adt-native-edit] button:focus-visible {
+  outline: 3px solid #f59e0b !important;
+  outline-offset: 3px;
+}
+
+#content [data-adt-task-answer][aria-invalid="true"] {
+  border-color: #b91c1c;
+}
+
+#content [data-adt-native-edit] {
+  margin-top: 1rem;
+  padding: 0.9rem;
+  border: 2px solid #86efac;
+  border-radius: 0.8rem;
+  background: #f0fdf4;
+}
+
+#content [data-adt-native-edit][hidden],
+#content [data-adt-task-actions] [hidden] {
+  display: none !important;
+}
+
 @media (max-width: 48rem) {
   #content [data-adt-task-title] {
     font-size: clamp(1.35rem, 5vw, 2rem) !important;
@@ -274,5 +409,14 @@ body > main {
     width: 100% !important;
     min-width: 0;
     font-size: 1.125rem;
+  }
+
+  #content [data-adt-task-response] {
+    padding: 0.9rem;
+  }
+
+  #content [data-adt-task-actions] :where(button, a),
+  #content [data-adt-native-edit] button {
+    width: 100%;
   }
 }
