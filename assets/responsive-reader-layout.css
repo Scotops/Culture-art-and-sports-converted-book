@@ -8,6 +8,8 @@ body {
 body {
   align-items: stretch !important;
   justify-content: flex-start !important;
+  /* Keep the last activity line clear of the fixed reader controls. */
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)) !important;
 }
 
 body > main {
@@ -155,5 +157,74 @@ body > main {
     padding: 0 !important;
     flex-direction: column !important;
     align-items: center !important;
+  }
+}
+
+/* Shared spacing and semantics for the book's Activity and Exercise families. */
+#content [data-adt-activity-section],
+#content [data-adt-task-card] {
+  min-width: 0;
+}
+
+#content [data-adt-task-heading] {
+  margin-block: 0 clamp(0.75rem, 1.5vw, 1.25rem) !important;
+}
+
+#content [data-adt-task-title] {
+  line-height: 1.2 !important;
+  text-wrap: balance;
+}
+
+#content [data-adt-task-instruction] {
+  max-width: 70ch;
+  margin-block: 0 clamp(0.75rem, 1.5vw, 1.25rem) !important;
+  line-height: 1.5 !important;
+  overflow-wrap: anywhere;
+}
+
+#content [data-adt-task-copy] {
+  line-height: 1.5 !important;
+  overflow-wrap: anywhere;
+}
+
+#content [data-adt-task-media] {
+  display: block;
+  max-width: 100%;
+  margin-block: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
+#content [data-adt-response-control] {
+  min-height: 2.75rem;
+  min-width: min(12rem, 100%);
+  padding: 0.35rem 0.5rem !important;
+  border-bottom: 2px solid #475569 !important;
+  border-radius: 0.25rem 0.25rem 0 0;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+#content [data-adt-response-control]:focus-visible {
+  outline: 3px solid #2563eb !important;
+  outline-offset: 3px;
+  border-color: #2563eb !important;
+}
+
+@media (max-width: 48rem) {
+  #content [data-adt-task-title] {
+    font-size: clamp(1.35rem, 5vw, 2rem) !important;
+  }
+
+  #content [data-adt-task-instruction] {
+    font-size: clamp(1.25rem, 4vw, 1.65rem) !important;
+  }
+
+  #content [data-adt-task-copy] {
+    font-size: clamp(1.125rem, 3.5vw, 1.35rem) !important;
+  }
+
+  #content [data-adt-response-control] {
+    width: 100% !important;
+    min-width: 0;
+    font-size: 1.125rem;
   }
 }

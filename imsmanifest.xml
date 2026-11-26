@@ -175,6 +175,7 @@
 
       <file href="assets/base.bundle.local.js" />
       <file href="assets/config.json" />
+      <file href="assets/activity-semantic-layout.js" />
       <file href="assets/media-playback-independence.js" />
       <file href="assets/offline-preloader.js" />
       <file href="assets/responsive-reader-layout.css" />
