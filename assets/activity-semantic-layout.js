@@ -228,7 +228,16 @@
     const editFocusKey = `adt-native-edit-focus:${location.pathname}`;
     if (sessionStorage.getItem(editFocusKey) === "true") {
       sessionStorage.removeItem(editFocusKey);
-      setTimeout(() => inputs[0]?.focus({ preventScroll: true }), 400);
+      const focusWhenReaderIsVisible = (attempt = 0) => {
+        const content = document.getElementById("content");
+        const readerIsVisible = content && Number.parseFloat(getComputedStyle(content).opacity) > 0.9;
+        if (readerIsVisible) {
+          setTimeout(() => inputs[0]?.focus({ preventScroll: true }), 100);
+          return;
+        }
+        if (attempt < 200) setTimeout(() => focusWhenReaderIsVisible(attempt + 1), 100);
+      };
+      focusWhenReaderIsVisible();
     }
 
     const updateVisibility = () => {
