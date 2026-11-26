@@ -177,6 +177,7 @@
       <file href="assets/config.json" />
       <file href="assets/media-playback-independence.js" />
       <file href="assets/offline-preloader.js" />
+      <file href="assets/responsive-reader-layout.css" />
       <file href="assets/sign-language-video.css" />
       <file href="assets/sign-language-video.js" />
       <file href="content/i18n/en-US/audios.json" />
