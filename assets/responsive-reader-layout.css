@@ -43,6 +43,54 @@ body > main {
   }
 }
 
+/* Keep the official glossary concise, visual, and keyboard-operable. */
+#content [data-section-id="pg103_sec001"] [data-adt-glossary-entry] {
+  grid-template-columns: 9rem minmax(0, 1fr) 8rem !important;
+  gap: 1rem !important;
+  align-items: center !important;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+#content [data-section-id="pg103_sec001"] [data-adt-glossary-entry]:not(:has([data-adt-glossary-visual])) {
+  grid-template-columns: 9rem minmax(0, 1fr) !important;
+}
+
+#content [data-adt-glossary-visual] {
+  margin: 0;
+  justify-self: end;
+}
+
+#content [data-adt-glossary-visual-image] {
+  display: block;
+  width: 8rem;
+  max-height: 8rem;
+  object-fit: contain;
+  border-radius: 0.75rem;
+}
+
+.glossary-term[data-glossary-key]:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+@media (max-width: 48rem) {
+  #content [data-section-id="pg103_sec001"] [data-adt-glossary-entry],
+  #content [data-section-id="pg103_sec001"] [data-adt-glossary-entry]:not(:has([data-adt-glossary-visual])) {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+
+  #content [data-adt-glossary-visual] {
+    justify-self: start;
+  }
+
+  #content [data-adt-glossary-visual-image] {
+    width: min(11rem, 55vw);
+    max-height: 10rem;
+  }
+}
+
 @media (max-width: 48rem) {
   #content :where(h1, h2, h3, h4, p, li, figcaption, label, button) {
     min-width: 0;
