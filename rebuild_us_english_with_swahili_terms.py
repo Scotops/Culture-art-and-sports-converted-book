@@ -36,7 +36,13 @@ SWAHILI_WORDS = {
     "za", "zuri", "awe", "che ma", "chema", "daima", "fora", "kwa", "kwao",
     "msewe", "muheme", "mpigane", "n i", "ni", "oh", "tamu", "tanzania",
     "watoto", "wavutia", "wema", "yako", "yangu", "rasilimali", "zetu",
-    "nyama", "ng'ombe", "kobe", "kuku", "rushwa", "tujifunzeni",
+    "nyama", "ng'ombe", "ng’ombe", "kobe", "kuku", "rushwa", "tujifunzeni",
+    # Tanzanian names and place names are routed to the Tanzanian Swahili
+    # voice even when they occur inside otherwise English sentences.
+    "lyabwene", "mtahabwa", "aneth", "komba", "mikocheni", "manyama",
+    "mbakilwa", "gisuka", "mwenesi", "devota", "marwa", "chachage",
+    "kwai", "fikiri", "msimbe", "mwinyi", "hassan", "salaam", "amina",
+    "hamisa", "mganda", "makonde", "kilimanjaro",
 }
 TERM_PATTERN = re.compile(r"\b(" + "|".join(sorted(map(re.escape, SWAHILI_WORDS), key=len, reverse=True)) + r")\b", re.I)
 
@@ -61,8 +67,9 @@ SPEECH_OVERRIDES = {
 # with the Tanzanian male voice avoids an English voice breaking up words that
 # are not in the short terminology dictionary above.
 SWAHILI_ONLY_IDS = {
-    *(f"pg054_n{number:04d}" for number in (7, 8, 9, 10, 11, 12, 13, 14)),
+    *(f"pg054_n{number:04d}" for number in (5, 6, 7, 8, 9, 10, 11, 12, 13, 14)),
     *(f"pg056_n{number:04d}" for number in (12, 13, 14, 15)),
+    *(f"pg057_n{number:04d}" for number in range(6, 18)),
     *(f"pg058_n{number:04d}" for number in (7, 8, 9, 10, 12, 13, 14, 15, 17, 18)),
     *(f"pg059_n{number:04d}" for number in (4, 5, 6, 7, 9, 10, 11, 12, 14, 15, 19, 20, 21, 22, 24, 25, 26, 27, 29, 30)),
 }
