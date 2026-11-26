@@ -296,7 +296,96 @@
   const initializeGlossaryFocus = () => {
     let lastTrigger = null;
     let glossaryDialogWasOpen = false;
+    let glossaryDataPromise = null;
+    let glossaryImageAlternatives = null;
+    let glossaryEntriesByWord = null;
     const dialogSelector = '[role="dialog"][aria-label^="Definition for "]';
+
+    const getGlossaryData = () => {
+      if (!glossaryDataPromise) {
+        glossaryDataPromise = fetch("./content/i18n/en-US/glossary.json")
+          .then((response) => response.ok ? response.json() : {})
+          .catch(() => ({}));
+      }
+      return glossaryDataPromise;
+    };
+
+    const applyGlossaryImageAlternatives = () => {
+      getGlossaryData().then((glossary) => {
+        glossaryImageAlternatives ||= new Map(Object.values(glossary)
+          .filter((entry) => entry.image && entry.imageAlt)
+          .map((entry) => [String(entry.image).replace(/^\.\//, ""), entry.imageAlt]));
+        document.querySelectorAll('#interface-container img[src][alt=""], [role="dialog"] img[src][alt=""]').forEach((image) => {
+          const source = (image.getAttribute("src") || "").replace(/^\.\//, "");
+          const alternative = glossaryImageAlternatives.get(source);
+          if (alternative) image.alt = alternative;
+        });
+      });
+    };
+
+    const findGlossaryPanel = (input) => {
+      let panel = input.parentElement;
+      while (panel && panel !== document.body) {
+        const hasBookGlossaryTab = [...panel.querySelectorAll("button")].some((button) =>
+          visibleText(button) === "Book glossary"
+        );
+        if (hasBookGlossaryTab) return panel;
+        panel = panel.parentElement;
+      }
+      return null;
+    };
+
+    const filterGlossaryPanel = (input) => {
+      const panel = findGlossaryPanel(input);
+      if (!panel) return;
+      const query = input.value.trim().toLocaleLowerCase();
+
+      getGlossaryData().then((glossary) => {
+        if (!panel.isConnected) return;
+        glossaryEntriesByWord ||= new Map(Object.values(glossary).map((entry) =>
+          [entry.word.toLocaleLowerCase(), entry]
+        ));
+        let matchCount = 0;
+        panel.querySelectorAll("li").forEach((item) => {
+          const wordElement = item.querySelector("button span.capitalize");
+          if (!wordElement) return;
+          const word = visibleText(wordElement);
+          const entry = glossaryEntriesByWord.get(word.toLocaleLowerCase());
+          const searchableText = entry
+            ? [entry.word, entry.definition, ...(entry.variations || [])].join(" ").toLocaleLowerCase()
+            : visibleText(item).toLocaleLowerCase();
+          const matches = !query || searchableText.includes(query);
+          item.hidden = !matches;
+          if (matches && item.getClientRects().length > 0) matchCount += 1;
+        });
+
+        let status = panel.querySelector("[data-adt-glossary-search-status]");
+        if (!status) {
+          status = document.createElement("p");
+          status.className = "sr-only";
+          status.setAttribute("data-adt-glossary-search-status", "");
+          status.setAttribute("role", "status");
+          status.setAttribute("aria-live", "polite");
+          input.parentElement?.appendChild(status);
+        }
+        const message = query
+          ? `${matchCount} glossary ${matchCount === 1 ? "term" : "terms"} found.`
+          : "Glossary search ready.";
+        if (status.textContent !== message) status.textContent = message;
+      });
+    };
+
+    const initializeGlossarySearch = () => {
+      document.querySelectorAll('#interface-container input[type="text"][aria-label="Search"]').forEach((input) => {
+        if (!findGlossaryPanel(input)) return;
+        if (!input.hasAttribute("data-adt-glossary-search")) {
+          input.setAttribute("data-adt-glossary-search", "");
+          input.addEventListener("input", () => filterGlossaryPanel(input));
+          input.addEventListener("search", () => filterGlossaryPanel(input));
+        }
+        filterGlossaryPanel(input);
+      });
+    };
 
     const restoreTriggerFocus = () => {
       if (!lastTrigger?.isConnected) return;
@@ -326,8 +415,12 @@
       const glossaryDialogIsOpen = Boolean(document.querySelector(dialogSelector));
       if (glossaryDialogWasOpen && !glossaryDialogIsOpen) restoreTriggerFocus();
       glossaryDialogWasOpen = glossaryDialogIsOpen;
+      applyGlossaryImageAlternatives();
+      initializeGlossarySearch();
     });
     observer.observe(document.body, { childList: true, subtree: true });
+    applyGlossaryImageAlternatives();
+    initializeGlossarySearch();
   };
 
   const enhancePrintedGlossary = (content) => {

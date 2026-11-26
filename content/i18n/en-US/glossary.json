@@ -1,11 +1,1304 @@
 {
+  "according to": {
+    "word": "according to",
+    "definition": "following rules, instructions, or what is said",
+    "variations": [
+      "according to"
+    ],
+    "emoji": "📘✅",
+    "textId": "gl001",
+    "definitionId": "gl001_def"
+  },
+  "accurately": {
+    "word": "accurately",
+    "definition": "in a correct and careful way",
+    "variations": [
+      "accurately"
+    ],
+    "emoji": "✅🎯",
+    "textId": "gl002",
+    "definitionId": "gl002_def"
+  },
+  "activities": {
+    "word": "activities",
+    "definition": "things people do for learning, work, or fun",
+    "variations": [
+      "activities",
+      "activity"
+    ],
+    "emoji": "🤹📚",
+    "textId": "gl004",
+    "definitionId": "gl004_def"
+  },
+  "aligning": {
+    "word": "aligning",
+    "definition": "putting things in the correct line or position",
+    "variations": [
+      "aligning",
+      "aligns"
+    ],
+    "emoji": "📏↔️",
+    "textId": "gl005",
+    "definitionId": "gl005_def"
+  },
+  "njuga": {
+    "word": "njuga",
+    "definition": "small bells worn around the ankles that make sound when a person moves",
+    "variations": [
+      "njuga"
+    ],
+    "emoji": "🔔🦶",
+    "textId": "gl006",
+    "definitionId": "gl006_def",
+    "image": "images/pg016_im002.png",
+    "imageAlt": "Four brown njuga strung together on a cord.",
+    "imageTextId": "pg016_im002"
+  },
+  "announce": {
+    "word": "announce",
+    "definition": "to say something clearly for others to hear.",
+    "variations": [
+      "announce",
+      "announced"
+    ],
+    "emoji": "📣🗣️",
+    "textId": "gl007",
+    "definitionId": "gl007_def"
+  },
+  "appreciate": {
+    "word": "appreciate",
+    "definition": "to understand the value of someone or something and show that you are thankful",
+    "variations": [
+      "appreciate"
+    ],
+    "emoji": "🙏😊",
+    "textId": "gl008",
+    "definitionId": "gl008_def"
+  },
+  "arms": {
+    "word": "arms",
+    "definition": "the body parts from the shoulders to the hands",
+    "variations": [
+      "arms",
+      "arm"
+    ],
+    "emoji": "💪",
+    "textId": "gl009",
+    "definitionId": "gl009_def"
+  },
+  "arrange": {
+    "word": "arrange",
+    "definition": "to put things in a certain order or position",
+    "variations": [
+      "arrange",
+      "arranged"
+    ],
+    "emoji": "📏🧩",
+    "textId": "gl010",
+    "definitionId": "gl010_def"
+  },
+  "art": {
+    "word": "art",
+    "definition": "work made by drawing, shaping, painting, or making things in a creative way",
+    "variations": [
+      "art"
+    ],
+    "emoji": "🎨🖼️",
+    "textId": "gl011",
+    "definitionId": "gl011_def"
+  },
+  "artwork": {
+    "word": "artwork",
+    "definition": "a piece of art made by someone",
+    "variations": [
+      "artwork",
+      "artworks"
+    ],
+    "emoji": "🎨🖼️",
+    "textId": "gl012",
+    "definitionId": "gl012_def"
+  },
+  "attaching": {
+    "word": "attaching",
+    "definition": "joining one thing to another",
+    "variations": [
+      "attaching",
+      "attaches"
+    ],
+    "emoji": "🧷🔗",
+    "textId": "gl013",
+    "definitionId": "gl013_def"
+  },
+  "backward": {
+    "word": "backward",
+    "definition": "toward the back or behind",
+    "variations": [
+      "backward"
+    ],
+    "emoji": "⬅️🔙",
+    "textId": "gl014",
+    "definitionId": "gl014_def"
+  },
+  "bananas": {
+    "word": "bananas",
+    "definition": "long yellow fruit that people eat",
+    "variations": [
+      "bananas",
+      "banana"
+    ],
+    "emoji": "🍌",
+    "textId": "gl015",
+    "definitionId": "gl015_def",
+    "image": "images/pg012_im001.jpg",
+    "imageAlt": "Plate of cooked bananas in stew",
+    "imageTextId": "pg012_im001"
+  },
+  "base": {
+    "word": "base",
+    "definition": "the bottom part that supports something",
+    "variations": [
+      "base"
+    ],
+    "emoji": "⬇️",
+    "textId": "gl016",
+    "definitionId": "gl016_def"
+  },
+  "basket": {
+    "word": "basket",
+    "definition": "A container used to hold or carry things.",
+    "variations": [
+      "basket",
+      "baskets"
+    ],
+    "emoji": "🧺",
+    "textId": "gl017",
+    "definitionId": "gl017_def",
+    "image": "images/pg101_im002.jpg",
+    "imageAlt": "A teacher stands with three teams of pupils around a central basket of fruit, with one empty basket placed near each team for the fruit basket game.",
+    "imageTextId": "pg101_im002"
+  },
   "batik": {
     "word": "batik",
     "definition": "Fabric decorated with various colours, used to make shirts, dresses, or headscarves.",
     "variations": [
       "batik"
     ],
-    "emoji": ""
+    "emoji": "🎨🧵",
+    "textId": "gl018",
+    "definitionId": "gl018_def",
+    "image": "images/pg014_im001.jpg",
+    "imageAlt": "Child wearing a blue and purple batik gown with pink sandals.",
+    "imageTextId": "pg014_im001"
+  },
+  "beads": {
+    "word": "beads",
+    "definition": "small pieces with holes that can be put on a string",
+    "variations": [
+      "beads",
+      "bead"
+    ],
+    "emoji": "📿🟡",
+    "textId": "gl019",
+    "definitionId": "gl019_def",
+    "image": "images/pg050_im003_seg001_v1_crop_v1.png",
+    "imageAlt": "A long string of red, blue, and yellow beads arranged in loops.",
+    "imageTextId": "pg050_im003_seg001_v1_crop_v1"
+  },
+  "beadwork": {
+    "word": "beadwork",
+    "definition": "art or items made by joining beads together",
+    "variations": [
+      "beadwork"
+    ],
+    "emoji": "📿🎨",
+    "textId": "gl020",
+    "definitionId": "gl020_def"
+  },
+  "behaviour": {
+    "word": "behaviour",
+    "definition": "the way a person acts.",
+    "variations": [
+      "behaviour"
+    ],
+    "emoji": "🙂👣",
+    "textId": "gl021",
+    "definitionId": "gl021_def"
+  },
+  "bend": {
+    "word": "bend",
+    "definition": "to move something so it is not straight",
+    "variations": [
+      "bend",
+      "bends",
+      "bending",
+      "bent",
+      "bended"
+    ],
+    "emoji": "↪️🦵",
+    "textId": "gl022",
+    "definitionId": "gl022_def"
+  },
+  "blouse": {
+    "word": "blouse",
+    "definition": "a shirt for women or girls",
+    "variations": [
+      "blouse"
+    ],
+    "emoji": "👚",
+    "textId": "gl023",
+    "definitionId": "gl023_def",
+    "image": "images/pg013_im002.jpg",
+    "imageAlt": "Woman wearing a green blouse, a blue and purple kanga, and red shoes.",
+    "imageTextId": "pg013_im002"
+  },
+  "blow": {
+    "word": "blow",
+    "definition": "to make air move, especially to make a whistle sound.",
+    "variations": [
+      "blow",
+      "blows"
+    ],
+    "emoji": "🌬️📯",
+    "textId": "gl024",
+    "definitionId": "gl024_def"
+  },
+  "bricks": {
+    "word": "bricks",
+    "definition": "hard blocks used for building walls and houses",
+    "variations": [
+      "bricks"
+    ],
+    "emoji": "🧱🏠",
+    "textId": "gl025",
+    "definitionId": "gl025_def"
+  },
+  "brush": {
+    "word": "brush",
+    "definition": "a tool with bristles used for painting",
+    "variations": [
+      "brush"
+    ],
+    "emoji": "🖌️🎨",
+    "textId": "gl026",
+    "definitionId": "gl026_def",
+    "image": "images/pg040_im001.jpg",
+    "imageAlt": "A boy draws number shapes on a large sheet of paper with a pencil, with paint and a brush beside him.",
+    "imageTextId": "pg040_im001"
+  },
+  "bucket": {
+    "word": "bucket",
+    "definition": "a container used for carrying water or other things",
+    "variations": [
+      "bucket"
+    ],
+    "emoji": "🪣",
+    "textId": "gl027",
+    "definitionId": "gl027_def",
+    "image": "images/pg035_im003.jpg",
+    "imageAlt": "Bucket of water",
+    "imageTextId": "pg035_im003"
+  },
+  "catch": {
+    "word": "catch",
+    "definition": "to take hold of something after it is thrown or falls",
+    "variations": [
+      "catch"
+    ],
+    "emoji": "🤲🎯",
+    "textId": "gl028",
+    "definitionId": "gl028_def"
+  },
+  "center": {
+    "word": "center",
+    "definition": "the middle part of something",
+    "variations": [
+      "center"
+    ],
+    "emoji": "🎯",
+    "textId": "gl029",
+    "definitionId": "gl029_def"
+  },
+  "challenge": {
+    "word": "challenge",
+    "definition": "something difficult that tests your ability",
+    "variations": [
+      "challenge",
+      "challenges"
+    ],
+    "emoji": "🏁💪",
+    "textId": "gl030",
+    "definitionId": "gl030_def"
+  },
+  "chapter": {
+    "word": "chapter",
+    "definition": "a main part of a book",
+    "variations": [
+      "chapter"
+    ],
+    "emoji": "📘",
+    "textId": "gl031",
+    "definitionId": "gl031_def"
+  },
+  "charcoal": {
+    "word": "charcoal",
+    "definition": "a black material used for drawing or writing",
+    "variations": [
+      "charcoal"
+    ],
+    "emoji": "⚫✍️",
+    "textId": "gl032",
+    "definitionId": "gl032_def"
+  },
+  "chest": {
+    "word": "chest",
+    "definition": "the front upper part of the body below the neck",
+    "variations": [
+      "chest"
+    ],
+    "emoji": "🫁",
+    "textId": "gl033",
+    "definitionId": "gl033_def"
+  },
+  "chest wrap": {
+    "word": "chest wrap",
+    "definition": "a cloth wrapped around the chest as clothing",
+    "variations": [
+      "chest wrap"
+    ],
+    "emoji": "🧣",
+    "textId": "gl034",
+    "definitionId": "gl034_def"
+  },
+  "church": {
+    "word": "church",
+    "definition": "a building where Christians go to pray.",
+    "variations": [
+      "church"
+    ],
+    "emoji": "⛪🙏",
+    "textId": "gl035",
+    "definitionId": "gl035_def",
+    "image": "images/pg023_im001.jpg",
+    "imageAlt": "A church with a bell tower and crosses on the roof, with people walking up the steps to enter.",
+    "imageTextId": "pg023_im001"
+  },
+  "circle": {
+    "word": "circle",
+    "definition": "a round shape with no corners",
+    "variations": [
+      "circle",
+      "circles"
+    ],
+    "emoji": "⭕",
+    "textId": "gl036",
+    "definitionId": "gl036_def"
+  },
+  "classroom": {
+    "word": "classroom",
+    "definition": "a room where pupils learn at school",
+    "variations": [
+      "classroom"
+    ],
+    "emoji": "🏫🪑",
+    "textId": "gl037",
+    "definitionId": "gl037_def"
+  },
+  "clay": {
+    "word": "clay",
+    "definition": "soft soil that can be shaped when wet",
+    "variations": [
+      "clay"
+    ],
+    "emoji": "🟤👐",
+    "textId": "gl038",
+    "definitionId": "gl038_def",
+    "image": "images/pg035_im002.png",
+    "imageAlt": "Pile of clay soil for making figures",
+    "imageTextId": "pg035_im002"
+  },
+  "clothing": {
+    "word": "clothing",
+    "definition": "things people wear on their body",
+    "variations": [
+      "clothing"
+    ],
+    "emoji": "👕🧥",
+    "textId": "gl040",
+    "definitionId": "gl040_def"
+  },
+  "coat": {
+    "word": "coat",
+    "definition": "an outer piece of clothing worn to cover the upper body",
+    "variations": [
+      "coat"
+    ],
+    "emoji": "🧥",
+    "textId": "gl041",
+    "definitionId": "gl041_def"
+  },
+  "collaborate": {
+    "word": "collaborate",
+    "definition": "to work together with other people.",
+    "variations": [
+      "collaborate"
+    ],
+    "emoji": "🤝👥",
+    "textId": "gl042",
+    "definitionId": "gl042_def"
+  },
+  "collect": {
+    "word": "collect",
+    "definition": "to bring things together in one place",
+    "variations": [
+      "collect",
+      "collects"
+    ],
+    "emoji": "🧺📦",
+    "textId": "gl043",
+    "definitionId": "gl043_def"
+  },
+  "colouring": {
+    "word": "colouring",
+    "definition": "the act of adding colour to letters, numbers, or pictures",
+    "variations": [
+      "colouring",
+      "coloring"
+    ],
+    "emoji": "🖍️🎨",
+    "textId": "gl044",
+    "definitionId": "gl044_def"
+  },
+  "command": {
+    "word": "command",
+    "definition": "an instruction telling someone what to do.",
+    "variations": [
+      "command",
+      "commands"
+    ],
+    "emoji": "🗣️📢",
+    "textId": "gl045",
+    "definitionId": "gl045_def"
+  },
+  "community": {
+    "word": "community",
+    "definition": "a group of people living or working together in one place.",
+    "variations": [
+      "community",
+      "communities"
+    ],
+    "emoji": "🏘️👨‍👩‍👧‍👦",
+    "textId": "gl047",
+    "definitionId": "gl047_def"
+  },
+  "compete": {
+    "word": "compete",
+    "definition": "to try to win against others in a game or activity.",
+    "variations": [
+      "compete",
+      "competing"
+    ],
+    "emoji": "🏃🏆",
+    "textId": "gl048",
+    "definitionId": "gl048_def"
+  },
+  "compose": {
+    "word": "compose",
+    "definition": "to create or make something, especially a song or piece of music",
+    "variations": [
+      "compose"
+    ],
+    "emoji": "🎼✍️",
+    "textId": "gl049",
+    "definitionId": "gl049_def"
+  },
+  "spices": {
+    "word": "spices",
+    "definition": "plant ingredients, such as pepper, cloves, or cinnamon, that add flavour to food",
+    "variations": [
+      "spices"
+    ],
+    "emoji": "🌿🍲",
+    "textId": "gl050",
+    "definitionId": "gl050_def"
+  },
+  "connected": {
+    "word": "connected",
+    "definition": "joined or linked together",
+    "variations": [
+      "connected"
+    ],
+    "emoji": "🔗",
+    "textId": "gl051",
+    "definitionId": "gl051_def"
+  },
+  "cooperation": {
+    "word": "cooperation",
+    "definition": "working together to help one another do something",
+    "variations": [
+      "cooperation"
+    ],
+    "emoji": "🤝👫",
+    "textId": "gl053",
+    "definitionId": "gl053_def"
+  },
+  "copied": {
+    "word": "copied",
+    "definition": "made to look like the same as something else",
+    "variations": [
+      "copied",
+      "copy",
+      "copies"
+    ],
+    "emoji": "📄🔁",
+    "textId": "gl055",
+    "definitionId": "gl055_def"
+  },
+  "correctly": {
+    "word": "correctly",
+    "definition": "in the right way and without mistakes",
+    "variations": [
+      "correctly"
+    ],
+    "emoji": "✅👍",
+    "textId": "gl056",
+    "definitionId": "gl056_def"
+  },
+  "corruption": {
+    "word": "corruption",
+    "definition": "dishonest behavior, especially using power or money in a wrong way",
+    "variations": [
+      "corruption"
+    ],
+    "emoji": "🚫💰",
+    "textId": "gl057",
+    "definitionId": "gl057_def"
+  },
+  "count": {
+    "word": "count",
+    "definition": "to say numbers in order.",
+    "variations": [
+      "count",
+      "counting"
+    ],
+    "emoji": "🔢🗣️",
+    "textId": "gl058",
+    "definitionId": "gl058_def"
+  },
+  "crayons": {
+    "word": "crayons",
+    "definition": "sticks of coloured wax used for drawing or colouring",
+    "variations": [
+      "crayons",
+      "crayon"
+    ],
+    "emoji": "🖍️🌈",
+    "textId": "gl059",
+    "definitionId": "gl059_def",
+    "image": "images/pg039_im006.jpg",
+    "imageAlt": "Crayons in different colors",
+    "imageTextId": "pg039_im006"
+  },
+  "create": {
+    "word": "create",
+    "definition": "to make something new",
+    "variations": [
+      "create",
+      "created",
+      "creating"
+    ],
+    "emoji": "🛠️✨",
+    "textId": "gl060",
+    "definitionId": "gl060_def"
+  },
+  "culture": {
+    "word": "culture",
+    "definition": "the way of life of a group of people, including their food, clothing, music, and customs",
+    "variations": [
+      "culture"
+    ],
+    "emoji": "🌍👘🎶",
+    "textId": "gl062",
+    "definitionId": "gl062_def"
+  },
+  "cup": {
+    "word": "cup",
+    "definition": "a small container used for drinking",
+    "variations": [
+      "cup"
+    ],
+    "emoji": "☕",
+    "textId": "gl063",
+    "definitionId": "gl063_def",
+    "image": "images/pg037_im001.jpg",
+    "imageAlt": "Flat round cup base made from clay",
+    "imageTextId": "pg037_im001"
+  },
+  "dance": {
+    "word": "dance",
+    "definition": "to move the body in time with music",
+    "variations": [
+      "dance",
+      "dances"
+    ],
+    "emoji": "💃🕺🎶",
+    "textId": "gl065",
+    "definitionId": "gl065_def",
+    "image": "images/pg018_im002.png",
+    "imageAlt": "Four women in black dresses perform the Muheme dance while bending forward and playing long drums.",
+    "imageTextId": "pg018_im002"
+  },
+  "demonstrate": {
+    "word": "demonstrate",
+    "definition": "to show how something is done.",
+    "variations": [
+      "demonstrate"
+    ],
+    "emoji": "🧑‍🏫👀",
+    "textId": "gl067",
+    "definitionId": "gl067_def"
+  },
+  "difference": {
+    "word": "difference",
+    "definition": "a way in which people or things are not the same.",
+    "variations": [
+      "difference",
+      "differences",
+      "different"
+    ],
+    "emoji": "🔍↔️",
+    "textId": "gl070",
+    "definitionId": "gl070_def"
+  },
+  "dishes": {
+    "word": "dishes",
+    "definition": "prepared kinds of food or meals",
+    "variations": [
+      "dishes"
+    ],
+    "emoji": "🍽️🥘",
+    "textId": "gl072",
+    "definitionId": "gl072_def"
+  },
+  "displayed": {
+    "word": "displayed",
+    "definition": "put in a place where people can see it",
+    "variations": [
+      "displayed",
+      "display"
+    ],
+    "emoji": "🖼️👀",
+    "textId": "gl073",
+    "definitionId": "gl073_def"
+  },
+  "divide": {
+    "word": "divide",
+    "definition": "to separate something into parts or groups",
+    "variations": [
+      "divide",
+      "divided"
+    ],
+    "emoji": "➗👥",
+    "textId": "gl074",
+    "definitionId": "gl074_def"
+  },
+  "drawing": {
+    "word": "drawing",
+    "definition": "making pictures, letters, or numbers with a pencil, crayon, or other tool",
+    "variations": [
+      "drawing",
+      "draw",
+      "draws",
+      "drawn"
+    ],
+    "emoji": "✏️🖼️",
+    "textId": "gl075",
+    "definitionId": "gl075_def"
+  },
+  "dress": {
+    "word": "dress",
+    "definition": "a piece of clothing worn by women or girls that hangs from the shoulders",
+    "variations": [
+      "dress",
+      "dresses"
+    ],
+    "emoji": "👗",
+    "textId": "gl076",
+    "definitionId": "gl076_def",
+    "image": "images/pg013_im003.jpg",
+    "imageAlt": "Woman wearing a green kitenge dress, a purple headscarf, and purple shoes, holding a purple bag.",
+    "imageTextId": "pg013_im003"
+  },
+  "drum": {
+    "word": "drum",
+    "definition": "a musical instrument that is hit with the hands or sticks",
+    "variations": [
+      "drum",
+      "drums"
+    ],
+    "emoji": "🥁",
+    "textId": "gl077",
+    "definitionId": "gl077_def",
+    "image": "images/pg017_im001.png",
+    "imageAlt": "Two wooden drums, one tall and one small",
+    "imageTextId": "pg017_im001"
+  },
+  "earn": {
+    "word": "earn",
+    "definition": "to get something because of your effort or action.",
+    "variations": [
+      "earn",
+      "earns"
+    ],
+    "emoji": "🏅✅",
+    "textId": "gl078",
+    "definitionId": "gl078_def"
+  },
+  "edible": {
+    "word": "edible",
+    "definition": "safe and suitable to eat",
+    "variations": [
+      "edible"
+    ],
+    "emoji": "🍽️✅",
+    "textId": "gl079",
+    "definitionId": "gl079_def"
+  },
+  "empty": {
+    "word": "empty",
+    "definition": "having nothing inside",
+    "variations": [
+      "empty"
+    ],
+    "emoji": "🈳",
+    "textId": "gl082",
+    "definitionId": "gl082_def"
+  },
+  "encourage": {
+    "word": "encourage",
+    "definition": "to help someone feel ready or confident to do something good.",
+    "variations": [
+      "encourage"
+    ],
+    "emoji": "👏🌟",
+    "textId": "gl083",
+    "definitionId": "gl083_def"
+  },
+  "equal": {
+    "word": "equal",
+    "definition": "the same in size, number, or amount",
+    "variations": [
+      "equal"
+    ],
+    "emoji": "⚖️🟰",
+    "textId": "gl084",
+    "definitionId": "gl084_def"
+  },
+  "ethical": {
+    "word": "ethical",
+    "definition": "about knowing and doing what is right and good.",
+    "variations": [
+      "ethical"
+    ],
+    "emoji": "⚖️✅",
+    "textId": "gl085",
+    "definitionId": "gl085_def"
+  },
+  "ethnic group": {
+    "word": "ethnic group",
+    "definition": "a community of people who share the same culture, language, or traditions",
+    "variations": [
+      "ethnic group"
+    ],
+    "emoji": "👥🌍",
+    "textId": "gl086",
+    "definitionId": "gl086_def"
+  },
+  "exercise": {
+    "word": "exercise",
+    "definition": "physical activity that helps keep your body strong and healthy",
+    "variations": [
+      "exercise",
+      "exercises"
+    ],
+    "emoji": "🏃💪",
+    "textId": "gl087",
+    "definitionId": "gl087_def",
+    "image": "images/pg063_im001.jpg",
+    "imageAlt": "Child doing a stretching exercise with one leg raised on a chair and the right arm extended forward.",
+    "imageTextId": "pg063_im001"
+  },
+  "exhibition": {
+    "word": "exhibition",
+    "definition": "a public showing of art or other work",
+    "variations": [
+      "exhibition"
+    ],
+    "emoji": "🎨🖼️🏫",
+    "textId": "gl088",
+    "definitionId": "gl088_def"
+  },
+  "extend": {
+    "word": "extend",
+    "definition": "to stretch out or make something reach farther",
+    "variations": [
+      "extend",
+      "extended"
+    ],
+    "emoji": "🖐️➡️",
+    "textId": "gl089",
+    "definitionId": "gl089_def"
+  },
+  "faith": {
+    "word": "faith",
+    "definition": "strong belief in a religion or in God.",
+    "variations": [
+      "faith"
+    ],
+    "emoji": "🙏💛",
+    "textId": "gl091",
+    "definitionId": "gl091_def"
+  },
+  "fashion show": {
+    "word": "fashion show",
+    "definition": "an event where people wear and show different clothes",
+    "variations": [
+      "fashion show"
+    ],
+    "emoji": "👗✨",
+    "textId": "gl092",
+    "definitionId": "gl092_def"
+  },
+  "feet": {
+    "word": "feet",
+    "definition": "the body parts at the ends of the legs",
+    "variations": [
+      "feet",
+      "foot"
+    ],
+    "emoji": "🦶",
+    "textId": "gl093",
+    "definitionId": "gl093_def"
+  },
+  "fellow": {
+    "word": "fellow",
+    "definition": "belonging to the same group or class",
+    "variations": [
+      "fellow"
+    ],
+    "emoji": "👫🏫",
+    "textId": "gl094",
+    "definitionId": "gl094_def"
+  },
+  "field": {
+    "word": "field",
+    "definition": "an open area where a game can be played",
+    "variations": [
+      "field"
+    ],
+    "emoji": "🏞️🏃",
+    "textId": "gl095",
+    "definitionId": "gl095_def"
+  },
+  "figure": {
+    "word": "figure",
+    "definition": "the shape or form of a person, animal, or object",
+    "variations": [
+      "figure",
+      "figures"
+    ],
+    "emoji": "👤🗿",
+    "textId": "gl096",
+    "definitionId": "gl096_def"
+  },
+  "final": {
+    "word": "final",
+    "definition": "coming at the end; last.",
+    "variations": [
+      "final",
+      "finally"
+    ],
+    "emoji": "🏁🔚",
+    "textId": "gl097",
+    "definitionId": "gl097_def"
+  },
+  "fish": {
+    "word": "fish",
+    "definition": "an animal that lives in water and can be eaten as food",
+    "variations": [
+      "fish"
+    ],
+    "emoji": "🐟🍽️",
+    "textId": "gl098",
+    "definitionId": "gl098_def",
+    "image": "images/pg008_im001.png",
+    "imageAlt": "A plate of small dried fish, labelled h.",
+    "imageTextId": "pg008_im001"
+  },
+  "flat": {
+    "word": "flat",
+    "definition": "having a smooth level surface and not raised",
+    "variations": [
+      "flat"
+    ],
+    "emoji": "⬜",
+    "textId": "gl099",
+    "definitionId": "gl099_def"
+  },
+  "flat form": {
+    "word": "flat form",
+    "definition": "a way of drawing something so it looks two-dimensional, without thickness or depth",
+    "variations": [
+      "flat form",
+      "flat forms"
+    ],
+    "emoji": "📄✏️",
+    "textId": "gl100",
+    "definitionId": "gl100_def"
+  },
+  "flute": {
+    "word": "flute",
+    "definition": "a musical instrument that is played by blowing air into it",
+    "variations": [
+      "flute",
+      "flutes"
+    ],
+    "emoji": "🎶🪈",
+    "textId": "gl101",
+    "definitionId": "gl101_def",
+    "image": "images/pg017_im002_seg002_v1_crop_v1.png",
+    "imageAlt": "Two wooden flutes with finger holes",
+    "imageTextId": "pg017_im002_seg002_v1_crop_v1"
+  },
+  "food": {
+    "word": "food",
+    "definition": "things that people eat",
+    "variations": [
+      "food",
+      "foods"
+    ],
+    "emoji": "🍽️🥘",
+    "textId": "gl102",
+    "definitionId": "gl102_def"
+  },
+  "forward": {
+    "word": "forward",
+    "definition": "toward the front",
+    "variations": [
+      "forward",
+      "forwards"
+    ],
+    "emoji": "➡️🔜",
+    "textId": "gl103",
+    "definitionId": "gl103_def"
+  },
+  "gently": {
+    "word": "gently",
+    "definition": "in a soft and careful way",
+    "variations": [
+      "gently"
+    ],
+    "emoji": "🤲🍃",
+    "textId": "gl104",
+    "definitionId": "gl104_def"
+  },
+  "gown": {
+    "word": "gown",
+    "definition": "a long dress",
+    "variations": [
+      "gown"
+    ],
+    "emoji": "👗",
+    "textId": "gl107",
+    "definitionId": "gl107_def"
+  },
+  "grab": {
+    "word": "grab",
+    "definition": "to take hold of something quickly.",
+    "variations": [
+      "grab",
+      "grabs"
+    ],
+    "emoji": "✋⚡",
+    "textId": "gl108",
+    "definitionId": "gl108_def"
+  },
+  "gracefully": {
+    "word": "gracefully",
+    "definition": "in a smooth and controlled way.",
+    "variations": [
+      "gracefully"
+    ],
+    "emoji": "✨🩰",
+    "textId": "gl109",
+    "definitionId": "gl109_def"
+  },
+  "gradually": {
+    "word": "gradually",
+    "definition": "slowly and little by little",
+    "variations": [
+      "gradually"
+    ],
+    "emoji": "🐢📈",
+    "textId": "gl110",
+    "definitionId": "gl110_def"
+  },
+  "greens": {
+    "word": "greens",
+    "definition": "green leaves or vegetables eaten as food",
+    "variations": [
+      "greens",
+      "green"
+    ],
+    "emoji": "🥬🌿",
+    "textId": "gl111",
+    "definitionId": "gl111_def",
+    "image": "images/pg009_im002.png",
+    "imageAlt": "People prepare a meal outdoors: greens cooking in a pot, ugali being stirred over a fire, and meat grilling on skewers.",
+    "imageTextId": "pg009_im002"
+  },
+  "greet": {
+    "word": "greet",
+    "definition": "to welcome someone or say hello.",
+    "variations": [
+      "greet",
+      "greets",
+      "greeting"
+    ],
+    "emoji": "👋🙂",
+    "textId": "gl112",
+    "definitionId": "gl112_def"
+  },
+  "grilled meat": {
+    "word": "grilled meat",
+    "definition": "meat cooked over fire or heat",
+    "variations": [
+      "grilled meat"
+    ],
+    "emoji": "🍖🔥",
+    "textId": "gl114",
+    "definitionId": "gl114_def",
+    "image": "images/pg012_im003.jpg",
+    "imageAlt": "Roasted meat with two gourds",
+    "imageTextId": "pg012_im003"
+  },
+  "ground": {
+    "word": "ground",
+    "definition": "the surface of the earth that you stand or walk on",
+    "variations": [
+      "ground"
+    ],
+    "emoji": "🌍🟫",
+    "textId": "gl115",
+    "definitionId": "gl115_def"
+  },
+  "group": {
+    "word": "group",
+    "definition": "a number of people together.",
+    "variations": [
+      "group",
+      "groups"
+    ],
+    "emoji": "👥🤝",
+    "textId": "gl116",
+    "definitionId": "gl116_def"
+  },
+  "half-circle": {
+    "word": "half-circle",
+    "definition": "half of a round shape",
+    "variations": [
+      "half-circle"
+    ],
+    "emoji": "🌗",
+    "textId": "gl117",
+    "definitionId": "gl117_def"
+  },
+  "handle": {
+    "word": "handle",
+    "definition": "the part of an object that is held by the hand",
+    "variations": [
+      "handle",
+      "handles"
+    ],
+    "emoji": "✋🪄",
+    "textId": "gl118",
+    "definitionId": "gl118_def"
+  },
+  "handstand": {
+    "word": "handstand",
+    "definition": "an act of balancing on your hands with your feet up in the air",
+    "variations": [
+      "handstand"
+    ],
+    "emoji": "🤸🙃",
+    "textId": "gl119",
+    "definitionId": "gl119_def",
+    "image": "images/pg088_im001.jpg",
+    "imageAlt": "Child balancing in a handstand with both hands on the ground and legs straight up.",
+    "imageTextId": "pg088_im001"
+  },
+  "head": {
+    "word": "head",
+    "definition": "the top part of the human body with the eyes, nose, mouth, and brain",
+    "variations": [
+      "head"
+    ],
+    "emoji": "🙂",
+    "textId": "gl120",
+    "definitionId": "gl120_def"
+  },
+  "headscarf": {
+    "word": "headscarf",
+    "definition": "a cloth worn on the head",
+    "variations": [
+      "headscarf"
+    ],
+    "emoji": "🧕🧣",
+    "textId": "gl121",
+    "definitionId": "gl121_def"
+  },
+  "hips": {
+    "word": "hips",
+    "definition": "the parts at the sides of the body below the waist that help you move your legs.",
+    "variations": [
+      "hips",
+      "hip"
+    ],
+    "emoji": "🦴🧍",
+    "textId": "gl122",
+    "definitionId": "gl122_def"
+  },
+  "holder": {
+    "word": "holder",
+    "definition": "a person who holds something.",
+    "variations": [
+      "holder",
+      "holders"
+    ],
+    "emoji": "✋🪢",
+    "textId": "gl123",
+    "definitionId": "gl123_def"
+  },
+  "hole": {
+    "word": "hole",
+    "definition": "an opening or empty space in something or in the ground",
+    "variations": [
+      "hole",
+      "holes"
+    ],
+    "emoji": "🕳️",
+    "textId": "gl124",
+    "definitionId": "gl124_def"
+  },
+  "hopscotch": {
+    "word": "hopscotch",
+    "definition": "a game where players jump through marked spaces, often on one foot",
+    "variations": [
+      "hopscotch"
+    ],
+    "emoji": "🦘🎲",
+    "textId": "gl125",
+    "definitionId": "gl125_def",
+    "image": "images/pg084_im002.jpg",
+    "imageAlt": "A schoolgirl stands beside a hopscotch board drawn on the ground, with a tile thrown into the first section.",
+    "imageTextId": "pg084_im002"
+  },
+  "baragumu": {
+    "word": "baragumu",
+    "definition": "a musical instrument that makes sound when air is blown into it",
+    "variations": [
+      "baragumu"
+    ],
+    "emoji": "📯",
+    "textId": "gl126",
+    "definitionId": "gl126_def",
+    "image": "images/pg017_im004.png",
+    "imageAlt": "A curved brown baragumu",
+    "imageTextId": "pg017_im004"
+  },
+  "household chores": {
+    "word": "household chores",
+    "definition": "jobs done at home, like cleaning or washing",
+    "variations": [
+      "household chores"
+    ],
+    "emoji": "🧹🏠",
+    "textId": "gl127",
+    "definitionId": "gl127_def"
+  },
+  "human figure": {
+    "word": "human figure",
+    "definition": "a model or drawing that looks like a person",
+    "variations": [
+      "human figure"
+    ],
+    "emoji": "🧍👤",
+    "textId": "gl128",
+    "definitionId": "gl128_def",
+    "image": "images/pg036_im008.jpg",
+    "imageAlt": "Step 7: The human figure is ready. Picture: a completed clay model of a human figure.",
+    "imageTextId": "pg036_im008"
+  },
+  "hurdles": {
+    "word": "hurdles",
+    "definition": "a game or race where players jump over things in their path",
+    "variations": [
+      "hurdles"
+    ],
+    "emoji": "🏃🪵↗️",
+    "textId": "gl129",
+    "definitionId": "gl129_def",
+    "image": "images/pg075_im002_book_reference_arrows.png",
+    "imageAlt": "A girl jumps over sandbags placed in a line on the ground during a hurdles game.",
+    "imageTextId": "pg075_im002"
+  },
+  "jacks": {
+    "word": "jacks",
+    "definition": "a game played by picking up small objects, such as marbles or stones, in turns",
+    "variations": [
+      "jacks"
+    ],
+    "emoji": "🎯🪨⚪",
+    "textId": "gl132",
+    "definitionId": "gl132_def",
+    "image": "images/pg070_im004.png",
+    "imageAlt": "Two children kneel on the ground and play jacks with marbles beside a small hole.",
+    "imageTextId": "pg070_im004"
+  },
+  "join": {
+    "word": "join",
+    "definition": "to connect two or more parts together",
+    "variations": [
+      "join",
+      "joined"
+    ],
+    "emoji": "🔗🤝",
+    "textId": "gl133",
+    "definitionId": "gl133_def"
+  },
+  "jump": {
+    "word": "jump",
+    "definition": "to push your body up off the ground with your legs",
+    "variations": [
+      "jump",
+      "jumps",
+      "jumping"
+    ],
+    "emoji": "🦘⬆️",
+    "textId": "gl134",
+    "definitionId": "gl134_def"
+  },
+  "kanga": {
+    "word": "kanga",
+    "definition": "a piece of traditional cloth worn by women, often wrapped around the body",
+    "variations": [
+      "kanga"
+    ],
+    "emoji": "🧕🧣",
+    "textId": "gl135",
+    "definitionId": "gl135_def",
+    "image": "images/pg013_im002.jpg",
+    "imageAlt": "Woman wearing a green blouse, a blue and purple kanga, and red shoes.",
+    "imageTextId": "pg013_im002"
   },
   "kaniki": {
     "word": "kaniki",
@@ -13,7 +1306,274 @@
     "variations": [
       "kaniki"
     ],
-    "emoji": ""
+    "emoji": "👘🧵",
+    "textId": "gl136",
+    "definitionId": "gl136_def",
+    "image": "images/pg015_im001.jpg",
+    "imageAlt": "Woman wearing a black chest wrap called Kaniki and sandals.",
+    "imageTextId": "pg015_im001"
+  },
+  "kitenge": {
+    "word": "kitenge",
+    "definition": "a colorful traditional African cloth used to make clothes",
+    "variations": [
+      "kitenge"
+    ],
+    "emoji": "🧵🎨",
+    "textId": "gl137",
+    "definitionId": "gl137_def",
+    "image": "images/pg013_im003.jpg",
+    "imageAlt": "Woman wearing a green kitenge dress, a purple headscarf, and purple shoes, holding a purple bag.",
+    "imageTextId": "pg013_im003"
+  },
+  "knee": {
+    "word": "knee",
+    "definition": "the joint in the middle of your leg that helps it bend",
+    "variations": [
+      "knee",
+      "knees"
+    ],
+    "emoji": "🦵🧍",
+    "textId": "gl138",
+    "definitionId": "gl138_def"
+  },
+  "kneel": {
+    "word": "kneel",
+    "definition": "to go down so one or both knees touch the ground",
+    "variations": [
+      "kneel",
+      "kneels",
+      "kneeling"
+    ],
+    "emoji": "🦵🙏",
+    "textId": "gl139",
+    "definitionId": "gl139_def"
+  },
+  "lane": {
+    "word": "lane",
+    "definition": "a marked path or track for one player or runner",
+    "variations": [
+      "lane"
+    ],
+    "emoji": "🛣️🏃",
+    "textId": "gl141",
+    "definitionId": "gl141_def"
+  },
+  "leader": {
+    "word": "leader",
+    "definition": "the person who guides or directs others in a group",
+    "variations": [
+      "leader",
+      "leaders"
+    ],
+    "emoji": "🧑‍🏫👑",
+    "textId": "gl142",
+    "definitionId": "gl142_def"
+  },
+  "leaf": {
+    "word": "leaf",
+    "definition": "the flat green part of a plant or tree",
+    "variations": [
+      "leaf",
+      "leaves"
+    ],
+    "emoji": "🍃🌿",
+    "textId": "gl143",
+    "definitionId": "gl143_def"
+  },
+  "lean": {
+    "word": "lean",
+    "definition": "to move your body to one side or in one direction without falling",
+    "variations": [
+      "lean",
+      "leaning"
+    ],
+    "emoji": "↔️🧍",
+    "textId": "gl144",
+    "definitionId": "gl144_def"
+  },
+  "legs": {
+    "word": "legs",
+    "definition": "the body parts used for standing and walking",
+    "variations": [
+      "legs",
+      "leg"
+    ],
+    "emoji": "🦵",
+    "textId": "gl145",
+    "definitionId": "gl145_def"
+  },
+  "letters": {
+    "word": "letters",
+    "definition": "symbols used in writing words",
+    "variations": [
+      "letters",
+      "letter"
+    ],
+    "emoji": "🔤",
+    "textId": "gl146",
+    "definitionId": "gl146_def"
+  },
+  "line": {
+    "word": "line",
+    "definition": "a row of people or things",
+    "variations": [
+      "line",
+      "lines"
+    ],
+    "emoji": "📏👫",
+    "textId": "gl147",
+    "definitionId": "gl147_def"
+  },
+  "lubega": {
+    "word": "lubega",
+    "definition": "a traditional wrap worn as clothing",
+    "variations": [
+      "lubega"
+    ],
+    "emoji": "🧣👘",
+    "textId": "gl148",
+    "definitionId": "gl148_def",
+    "image": "images/pg014_im004_crop_v1.png",
+    "imageAlt": "Person wearing a red lubega wrap draped over one shoulder, with sandals and a small stick in one hand.",
+    "imageTextId": "pg014_im004_crop_v1"
+  },
+  "manners": {
+    "word": "manners",
+    "definition": "polite ways of speaking and acting.",
+    "variations": [
+      "manners"
+    ],
+    "emoji": "😊🤝",
+    "textId": "gl149",
+    "definitionId": "gl149_def"
+  },
+  "marble": {
+    "word": "marble",
+    "definition": "a small hard round ball used in games",
+    "variations": [
+      "marble",
+      "marbles"
+    ],
+    "emoji": "⚪🎲",
+    "textId": "gl151",
+    "definitionId": "gl151_def",
+    "image": "images/pg071_im001.jpg",
+    "imageAlt": "Two children kneel facing each other with a hole of small marbles between them, and one child holds the big marble in one hand.",
+    "imageTextId": "pg071_im001"
+  },
+  "mark": {
+    "word": "mark",
+    "definition": "to draw a line or sign to show a place",
+    "variations": [
+      "mark",
+      "marked"
+    ],
+    "emoji": "✏️📍",
+    "textId": "gl152",
+    "definitionId": "gl152_def"
+  },
+  "mat": {
+    "word": "mat",
+    "definition": "a piece of material placed on the floor or table",
+    "variations": [
+      "mat",
+      "mats"
+    ],
+    "emoji": "🧺🏠",
+    "textId": "gl153",
+    "definitionId": "gl153_def",
+    "image": "images/pg034_im002.jpg",
+    "imageAlt": "Two pupils sitting on a mat and weaving dried plant strips into mats.",
+    "imageTextId": "pg034_im002"
+  },
+  "materials": {
+    "word": "materials",
+    "definition": "the things needed to do or make something",
+    "variations": [
+      "materials"
+    ],
+    "emoji": "🧰📦",
+    "textId": "gl154",
+    "definitionId": "gl154_def"
+  },
+  "meat": {
+    "word": "meat",
+    "definition": "food that comes from animals",
+    "variations": [
+      "meat"
+    ],
+    "emoji": "🍖🥩",
+    "textId": "gl155",
+    "definitionId": "gl155_def",
+    "image": "images/pg012_im003.jpg",
+    "imageAlt": "Roasted meat with two gourds",
+    "imageTextId": "pg012_im003"
+  },
+  "mention": {
+    "word": "mention",
+    "definition": "to say or name something",
+    "variations": [
+      "mention"
+    ],
+    "emoji": "💬📢",
+    "textId": "gl156",
+    "definitionId": "gl156_def"
+  },
+  "miss": {
+    "word": "miss",
+    "definition": "to fail to reach, touch, or get something.",
+    "variations": [
+      "miss"
+    ],
+    "emoji": "❌👋",
+    "textId": "gl157",
+    "definitionId": "gl157_def"
+  },
+  "mistake": {
+    "word": "mistake",
+    "definition": "something done in the wrong way; an error",
+    "variations": [
+      "mistake",
+      "mistakes"
+    ],
+    "emoji": "❌😕",
+    "textId": "gl158",
+    "definitionId": "gl158_def"
+  },
+  "modelling": {
+    "word": "modelling",
+    "definition": "shaping a material to make an object or figure",
+    "variations": [
+      "modelling",
+      "model"
+    ],
+    "emoji": "🗿✋",
+    "textId": "gl159",
+    "definitionId": "gl159_def"
+  },
+  "models": {
+    "word": "models",
+    "definition": "shaped copies of people, animals, or things",
+    "variations": [
+      "models"
+    ],
+    "emoji": "🗿🏠",
+    "textId": "gl160",
+    "definitionId": "gl160_def"
+  },
+  "mosque": {
+    "word": "mosque",
+    "definition": "a building where Muslims go to pray.",
+    "variations": [
+      "mosque"
+    ],
+    "emoji": "🕌🙏",
+    "textId": "gl161",
+    "definitionId": "gl161_def",
+    "image": "images/pg022_im002_v2_star_next_to_moon.jpg",
+    "imageAlt": "A mosque with domes and a tall minaret topped by a crescent moon, with shoes outside the entrance and trees around it.",
+    "imageTextId": "pg022_im002"
   },
   "msuli": {
     "word": "msuli",
@@ -21,15 +1581,1090 @@
     "variations": [
       "msuli"
     ],
-    "emoji": ""
+    "emoji": "🧥👘",
+    "textId": "gl162",
+    "definitionId": "gl162_def",
+    "image": "images/pg014_im003.jpg",
+    "imageAlt": "Man wearing a white cap, white T-shirt, dark coat, yellow msuli, and sandals, holding a walking stick.",
+    "imageTextId": "pg014_im003"
+  },
+  "music": {
+    "word": "music",
+    "definition": "sounds made by singing or instruments in a pleasing way",
+    "variations": [
+      "music"
+    ],
+    "emoji": "🎵🎶",
+    "textId": "gl163",
+    "definitionId": "gl163_def"
+  },
+  "musical instrument": {
+    "word": "musical instrument",
+    "definition": "an object used to make music",
+    "variations": [
+      "musical instrument",
+      "musical instruments"
+    ],
+    "emoji": "🥁🎺",
+    "textId": "gl164",
+    "definitionId": "gl164_def"
+  },
+  "narrow": {
+    "word": "narrow",
+    "definition": "not wide; small from side to side",
+    "variations": [
+      "narrow"
+    ],
+    "emoji": "📏↔️",
+    "textId": "gl165",
+    "definitionId": "gl165_def"
+  },
+  "National Anthem": {
+    "word": "National Anthem",
+    "definition": "the official song of a country",
+    "variations": [
+      "National Anthem",
+      "anthem"
+    ],
+    "emoji": "🎵🇹🇿",
+    "textId": "gl166",
+    "definitionId": "gl166_def"
+  },
+  "natural resources": {
+    "word": "natural resources",
+    "definition": "useful things found in nature, such as water, forests, minerals, and animals",
+    "variations": [
+      "natural resources"
+    ],
+    "emoji": "🌍💧🌿",
+    "textId": "gl167",
+    "definitionId": "gl167_def"
+  },
+  "neighbourhood": {
+    "word": "neighbourhood",
+    "definition": "the area where people live near one another",
+    "variations": [
+      "neighbourhood"
+    ],
+    "emoji": "🏘️🚶",
+    "textId": "gl168",
+    "definitionId": "gl168_def"
+  },
+  "numbers": {
+    "word": "numbers",
+    "definition": "symbols used for counting or showing amount",
+    "variations": [
+      "numbers",
+      "number"
+    ],
+    "emoji": "🔢",
+    "textId": "gl169",
+    "definitionId": "gl169_def"
+  },
+  "obey": {
+    "word": "obey",
+    "definition": "to do what a rule, order, or signal tells you to do.",
+    "variations": [
+      "obey",
+      "obeying"
+    ],
+    "emoji": "✅👂",
+    "textId": "gl170",
+    "definitionId": "gl170_def"
+  },
+  "original": {
+    "word": "original",
+    "definition": "the first real thing from which a copy is made",
+    "variations": [
+      "original"
+    ],
+    "emoji": "✨📄",
+    "textId": "gl172",
+    "definitionId": "gl172_def"
+  },
+  "pace": {
+    "word": "pace",
+    "definition": "the speed of walking or moving",
+    "variations": [
+      "pace"
+    ],
+    "emoji": "🚶⏱️",
+    "textId": "gl174",
+    "definitionId": "gl174_def"
+  },
+  "pair": {
+    "word": "pair",
+    "definition": "a set of two people or two things.",
+    "variations": [
+      "pair",
+      "pairs"
+    ],
+    "emoji": "👫2️⃣",
+    "textId": "gl175",
+    "definitionId": "gl175_def"
+  },
+  "paper": {
+    "word": "paper",
+    "definition": "thin material used for writing or drawing on",
+    "variations": [
+      "paper"
+    ],
+    "emoji": "📄",
+    "textId": "gl176",
+    "definitionId": "gl176_def"
+  },
+  "participate": {
+    "word": "participate",
+    "definition": "to join in an activity with others",
+    "variations": [
+      "participate",
+      "participating"
+    ],
+    "emoji": "🙋🤸",
+    "textId": "gl177",
+    "definitionId": "gl177_def"
+  },
+  "partner": {
+    "word": "partner",
+    "definition": "a person you work or play with.",
+    "variations": [
+      "partner"
+    ],
+    "emoji": "🤝👬",
+    "textId": "gl178",
+    "definitionId": "gl178_def"
+  },
+  "patterns": {
+    "word": "patterns",
+    "definition": "designs made by repeating shapes, lines, or colours",
+    "variations": [
+      "patterns"
+    ],
+    "emoji": "🔷🎨",
+    "textId": "gl179",
+    "definitionId": "gl179_def"
+  },
+  "peer": {
+    "word": "peer",
+    "definition": "someone of the same age or group",
+    "variations": [
+      "peer",
+      "peers"
+    ],
+    "emoji": "🧒👫",
+    "textId": "gl180",
+    "definitionId": "gl180_def"
+  },
+  "pencil": {
+    "word": "pencil",
+    "definition": "a tool used for writing or drawing",
+    "variations": [
+      "pencil"
+    ],
+    "emoji": "✏️",
+    "textId": "gl181",
+    "definitionId": "gl181_def",
+    "image": "images/pg039_im002.png",
+    "imageAlt": "Pencil",
+    "imageTextId": "pg039_im002"
+  },
+  "perform": {
+    "word": "perform",
+    "definition": "to do an action or activity",
+    "variations": [
+      "perform",
+      "performed",
+      "performing"
+    ],
+    "emoji": "✅🏃",
+    "textId": "gl182",
+    "definitionId": "gl182_def"
+  },
+  "plain paper": {
+    "word": "plain paper",
+    "definition": "paper that has no lines, pictures, or designs on it",
+    "variations": [
+      "plain paper"
+    ],
+    "emoji": "📄⬜",
+    "textId": "gl183",
+    "definitionId": "gl183_def"
+  },
+  "plastered wall": {
+    "word": "plastered wall",
+    "definition": "a wall covered with a smooth layer of plaster",
+    "variations": [
+      "plastered wall"
+    ],
+    "emoji": "🧱🏠",
+    "textId": "gl184",
+    "definitionId": "gl184_def"
+  },
+  "player": {
+    "word": "player",
+    "definition": "a person who takes part in a game",
+    "variations": [
+      "player",
+      "players"
+    ],
+    "emoji": "🏃🎮",
+    "textId": "gl185",
+    "definitionId": "gl185_def"
+  },
+  "playground": {
+    "word": "playground",
+    "definition": "an outdoor place where children play games",
+    "variations": [
+      "playground"
+    ],
+    "emoji": "🛝🏫",
+    "textId": "gl186",
+    "definitionId": "gl186_def"
+  },
+  "poem": {
+    "word": "poem",
+    "definition": "a piece of writing in lines that expresses ideas or feelings",
+    "variations": [
+      "poem",
+      "poems",
+      "poetry"
+    ],
+    "emoji": "📖✍️",
+    "textId": "gl187",
+    "definitionId": "gl187_def"
+  },
+  "point": {
+    "word": "point",
+    "definition": "a score given in a game.",
+    "variations": [
+      "point",
+      "points"
+    ],
+    "emoji": "🔢🏆",
+    "textId": "gl188",
+    "definitionId": "gl188_def"
+  },
+  "politely": {
+    "word": "politely",
+    "definition": "in a kind and respectful way.",
+    "variations": [
+      "politely"
+    ],
+    "emoji": "🙏😊",
+    "textId": "gl189",
+    "definitionId": "gl189_def"
+  },
+  "positioning": {
+    "word": "positioning",
+    "definition": "placing something in a particular spot",
+    "variations": [
+      "positioning",
+      "position"
+    ],
+    "emoji": "📍✋",
+    "textId": "gl190",
+    "definitionId": "gl190_def"
+  },
+  "pressing": {
+    "word": "pressing",
+    "definition": "pushing down on something gently or firmly",
+    "variations": [
+      "pressing",
+      "press",
+      "presses"
+    ],
+    "emoji": "✋⬇️",
+    "textId": "gl191",
+    "definitionId": "gl191_def"
+  },
+  "printing": {
+    "word": "printing",
+    "definition": "making copies of a shape or object on paper",
+    "variations": [
+      "printing",
+      "print",
+      "prints",
+      "printed"
+    ],
+    "emoji": "🖨️🎨",
+    "textId": "gl192",
+    "definitionId": "gl192_def"
+  },
+  "process": {
+    "word": "process",
+    "definition": "a series of steps done in order to finish something",
+    "variations": [
+      "process"
+    ],
+    "emoji": "🪜➡️",
+    "textId": "gl193",
+    "definitionId": "gl193_def"
+  },
+  "pupil": {
+    "word": "pupil",
+    "definition": "a child who is learning in school",
+    "variations": [
+      "pupil",
+      "pupils"
+    ],
+    "emoji": "🧒📘",
+    "textId": "gl195",
+    "definitionId": "gl195_def"
+  },
+  "randomly": {
+    "word": "randomly",
+    "definition": "in a way that is not planned or chosen in order",
+    "variations": [
+      "randomly",
+      "random"
+    ],
+    "emoji": "🎲",
+    "textId": "gl197",
+    "definitionId": "gl197_def"
+  },
+  "rattle": {
+    "word": "rattle",
+    "definition": "a musical instrument that makes sound when shaken",
+    "variations": [
+      "rattle",
+      "rattles"
+    ],
+    "emoji": "🪇",
+    "textId": "gl198",
+    "definitionId": "gl198_def",
+    "image": "images/pg017_im006.png",
+    "imageAlt": "A long yellow plant-fiber rattle",
+    "imageTextId": "pg017_im006"
+  },
+  "receive": {
+    "word": "receive",
+    "definition": "to get or be given something.",
+    "variations": [
+      "receive",
+      "receives",
+      "receiving"
+    ],
+    "emoji": "🎁🤲",
+    "textId": "gl199",
+    "definitionId": "gl199_def"
+  },
+  "recite": {
+    "word": "recite",
+    "definition": "to say a poem or other words aloud from memory or with practice",
+    "variations": [
+      "recite",
+      "reciting"
+    ],
+    "emoji": "🗣️📜",
+    "textId": "gl200",
+    "definitionId": "gl200_def"
   },
   "referee": {
     "word": "referee",
     "definition": "A person who makes sure the rules of a game are followed.",
     "variations": [
-      "referee",
-      "referees"
+      "referee"
     ],
-    "emoji": ""
+    "emoji": "👨‍⚖️🏅",
+    "textId": "gl201",
+    "definitionId": "gl201_def",
+    "image": "images/pg099_im002.jpg",
+    "imageAlt": "Eight children stand on a starting line as a referee with a whistle prepares them to run to the boxes marked on the field.",
+    "imageTextId": "pg099_im002"
+  },
+  "religious": {
+    "word": "religious",
+    "definition": "connected to religion or worship.",
+    "variations": [
+      "religious"
+    ],
+    "emoji": "🙏⛪🕌",
+    "textId": "gl202",
+    "definitionId": "gl202_def"
+  },
+  "remains": {
+    "word": "remains",
+    "definition": "stays left or continues to be there after others are gone",
+    "variations": [
+      "remains"
+    ],
+    "emoji": "🧍⏳",
+    "textId": "gl203",
+    "definitionId": "gl203_def"
+  },
+  "remove": {
+    "word": "remove",
+    "definition": "to take something away from a place",
+    "variations": [
+      "remove",
+      "removed",
+      "removing"
+    ],
+    "emoji": "➖✋",
+    "textId": "gl204",
+    "definitionId": "gl204_def"
+  },
+  "repeat": {
+    "word": "repeat",
+    "definition": "to do or say something again",
+    "variations": [
+      "repeat",
+      "repeated"
+    ],
+    "emoji": "🔁📝",
+    "textId": "gl205",
+    "definitionId": "gl205_def"
+  },
+  "reply": {
+    "word": "reply",
+    "definition": "to answer by speaking or doing something",
+    "variations": [
+      "reply"
+    ],
+    "emoji": "💬↩️",
+    "textId": "gl206",
+    "definitionId": "gl206_def"
+  },
+  "request": {
+    "word": "request",
+    "definition": "to politely ask for something.",
+    "variations": [
+      "request",
+      "requesting"
+    ],
+    "emoji": "🙋🙏",
+    "textId": "gl207",
+    "definitionId": "gl207_def"
+  },
+  "requirements": {
+    "word": "requirements",
+    "definition": "the things that are needed for an activity",
+    "variations": [
+      "requirements",
+      "requirement"
+    ],
+    "emoji": "📋🧰",
+    "textId": "gl209",
+    "definitionId": "gl209_def"
+  },
+  "respect": {
+    "word": "respect",
+    "definition": "to treat people, places, or beliefs in a kind and proper way.",
+    "variations": [
+      "respect",
+      "respecting"
+    ],
+    "emoji": "🤝🙏",
+    "textId": "gl210",
+    "definitionId": "gl210_def"
+  },
+  "return": {
+    "word": "return",
+    "definition": "to put something back or go back to a place",
+    "variations": [
+      "return",
+      "returns",
+      "returning"
+    ],
+    "emoji": "↩️📍",
+    "textId": "gl211",
+    "definitionId": "gl211_def"
+  },
+  "rhythm": {
+    "word": "rhythm",
+    "definition": "a regular beat or pattern in music or movement",
+    "variations": [
+      "rhythm"
+    ],
+    "emoji": "🥁🎵",
+    "textId": "gl212",
+    "definitionId": "gl212_def"
+  },
+  "rice": {
+    "word": "rice",
+    "definition": "small grains cooked and eaten as food",
+    "variations": [
+      "rice"
+    ],
+    "emoji": "🍚",
+    "textId": "gl213",
+    "definitionId": "gl213_def",
+    "image": "images/pg007_im001.png",
+    "imageAlt": "A plate of white rice, labelled d.",
+    "imageTextId": "pg007_im001"
+  },
+  "rope": {
+    "word": "rope",
+    "definition": "a strong thick string used for pulling, tying, or games.",
+    "variations": [
+      "rope"
+    ],
+    "emoji": "🪢🏃",
+    "textId": "gl214",
+    "definitionId": "gl214_def",
+    "image": "images/pg094_im002.jpg",
+    "imageAlt": "Jump rope with two handles for the rope-skipping game.",
+    "imageTextId": "pg094_im002"
+  },
+  "round": {
+    "word": "round",
+    "definition": "shaped like a circle or a ball",
+    "variations": [
+      "round"
+    ],
+    "emoji": "⭕⚪",
+    "textId": "gl215",
+    "definitionId": "gl215_def"
+  },
+  "rubber": {
+    "word": "rubber",
+    "definition": "an object used to remove pencil marks from paper",
+    "variations": [
+      "rubber"
+    ],
+    "emoji": "🧽",
+    "textId": "gl216",
+    "definitionId": "gl216_def",
+    "image": "images/pg039_im005.png",
+    "imageAlt": "Eraser",
+    "imageTextId": "pg039_im005"
+  },
+  "section": {
+    "word": "section",
+    "definition": "one part of a larger area",
+    "variations": [
+      "section"
+    ],
+    "emoji": "🔲📍",
+    "textId": "gl217",
+    "definitionId": "gl217_def"
+  },
+  "kayamba": {
+    "word": "kayamba",
+    "definition": "an instrument that makes sound when it is shaken",
+    "variations": [
+      "kayamba"
+    ],
+    "emoji": "🪇",
+    "textId": "gl218",
+    "definitionId": "gl218_def",
+    "image": "images/pg017_im003.png",
+    "imageAlt": "A wide kayamba with many upright reeds on a curved base",
+    "imageTextId": "pg017_im003"
+  },
+  "shape": {
+    "word": "shape",
+    "definition": "the form of something, such as round, square, or long",
+    "variations": [
+      "shape",
+      "shapes",
+      "shaping"
+    ],
+    "emoji": "🔷⭕",
+    "textId": "gl219",
+    "definitionId": "gl219_def"
+  },
+  "sharpener": {
+    "word": "sharpener",
+    "definition": "a tool used to make a pencil point sharp",
+    "variations": [
+      "sharpener"
+    ],
+    "emoji": "🪒✏️",
+    "textId": "gl220",
+    "definitionId": "gl220_def",
+    "image": "images/pg039_im003.png",
+    "imageAlt": "Sharpener",
+    "imageTextId": "pg039_im003"
+  },
+  "shorts": {
+    "word": "shorts",
+    "definition": "short trousers that end above the knee",
+    "variations": [
+      "shorts"
+    ],
+    "emoji": "🩳",
+    "textId": "gl221",
+    "definitionId": "gl221_def",
+    "image": "images/pg014_im002.jpg",
+    "imageAlt": "Child wearing an orange T-shirt, green shorts, and black sandals.",
+    "imageTextId": "pg014_im002"
+  },
+  "sideways": {
+    "word": "sideways",
+    "definition": "toward one side instead of forward or backward",
+    "variations": [
+      "sideways"
+    ],
+    "emoji": "↔️➡️",
+    "textId": "gl222",
+    "definitionId": "gl222_def"
+  },
+  "single": {
+    "word": "single",
+    "definition": "only one.",
+    "variations": [
+      "single"
+    ],
+    "emoji": "1️⃣👤",
+    "textId": "gl223",
+    "definitionId": "gl223_def"
+  },
+  "soles": {
+    "word": "soles",
+    "definition": "the bottom parts of shoes",
+    "variations": [
+      "soles"
+    ],
+    "emoji": "👟🦶",
+    "textId": "gl224",
+    "definitionId": "gl224_def"
+  },
+  "solo": {
+    "word": "solo",
+    "definition": "done by one person alone.",
+    "variations": [
+      "solo"
+    ],
+    "emoji": "🙋1️⃣",
+    "textId": "gl225",
+    "definitionId": "gl225_def"
+  },
+  "somersault": {
+    "word": "somersault",
+    "definition": "a movement where the body turns over completely by rolling or flipping",
+    "variations": [
+      "somersault",
+      "somersaulting"
+    ],
+    "emoji": "🤸🔄",
+    "textId": "gl226",
+    "definitionId": "gl226_def",
+    "image": "images/pg090_im005_without_numbers.png",
+    "imageAlt": "Step 3: Finish the somersault by sitting up with your knees bent.",
+    "imageTextId": "pg090_im005"
+  },
+  "space": {
+    "word": "space",
+    "definition": "an empty area or one part of a game board",
+    "variations": [
+      "space",
+      "spaces"
+    ],
+    "emoji": "⬜📏",
+    "textId": "gl227",
+    "definitionId": "gl227_def"
+  },
+  "sports": {
+    "word": "sports",
+    "definition": "games and physical activities people do for fun or competition",
+    "variations": [
+      "sports"
+    ],
+    "emoji": "⚽🏃",
+    "textId": "gl228",
+    "definitionId": "gl228_def"
+  },
+  "starting line": {
+    "word": "starting line",
+    "definition": "the line where a race or game begins.",
+    "variations": [
+      "starting line"
+    ],
+    "emoji": "🏁📍",
+    "textId": "gl229",
+    "definitionId": "gl229_def"
+  },
+  "step on": {
+    "word": "step on",
+    "definition": "to put your foot on something",
+    "variations": [
+      "step on",
+      "steps on",
+      "stepping on"
+    ],
+    "emoji": "👣⬇️",
+    "textId": "gl230",
+    "definitionId": "gl230_def"
+  },
+  "stomach": {
+    "word": "stomach",
+    "definition": "the front part of your body below your chest; your belly",
+    "variations": [
+      "stomach"
+    ],
+    "emoji": "🤰🫃",
+    "textId": "gl231",
+    "definitionId": "gl231_def"
+  },
+  "straight line": {
+    "word": "straight line",
+    "definition": "a line that does not curve or bend",
+    "variations": [
+      "straight line"
+    ],
+    "emoji": "📏➡️",
+    "textId": "gl232",
+    "definitionId": "gl232_def"
+  },
+  "stretch": {
+    "word": "stretch",
+    "definition": "to make your body or a body part longer or looser by reaching or pulling it gently",
+    "variations": [
+      "stretch",
+      "stretching",
+      "stretched"
+    ],
+    "emoji": "🤸🧘",
+    "textId": "gl233",
+    "definitionId": "gl233_def"
+  },
+  "stringing": {
+    "word": "stringing",
+    "definition": "the act of putting things such as beads onto a string in order",
+    "variations": [
+      "stringing",
+      "string",
+      "strung"
+    ],
+    "emoji": "🧵📿",
+    "textId": "gl234",
+    "definitionId": "gl234_def"
+  },
+  "swing": {
+    "word": "swing",
+    "definition": "to move something back and forth or around.",
+    "variations": [
+      "swing",
+      "swings",
+      "swinging"
+    ],
+    "emoji": "🔄🪢",
+    "textId": "gl235",
+    "definitionId": "gl235_def"
+  },
+  "switch": {
+    "word": "switch",
+    "definition": "to change from one thing to another",
+    "variations": [
+      "switch",
+      "switching"
+    ],
+    "emoji": "🔁↔️",
+    "textId": "gl236",
+    "definitionId": "gl236_def"
+  },
+  "switch over": {
+    "word": "switch over",
+    "definition": "to change places or jobs with someone else.",
+    "variations": [
+      "switch over"
+    ],
+    "emoji": "🔄↔️",
+    "textId": "gl237",
+    "definitionId": "gl237_def"
+  },
+  "T-shirt": {
+    "word": "T-shirt",
+    "definition": "a light shirt with short sleeves",
+    "variations": [
+      "T-shirt"
+    ],
+    "emoji": "👕",
+    "textId": "gl239",
+    "definitionId": "gl239_def",
+    "image": "images/pg014_im002.jpg",
+    "imageAlt": "Child wearing an orange T-shirt, green shorts, and black sandals.",
+    "imageTextId": "pg014_im002"
+  },
+  "team": {
+    "word": "team",
+    "definition": "A group of people who play or work together.",
+    "variations": [
+      "team",
+      "teams"
+    ],
+    "emoji": "👥🤝",
+    "textId": "gl240",
+    "definitionId": "gl240_def"
+  },
+  "texture": {
+    "word": "texture",
+    "definition": "the way a surface feels or looks, for example rough or smooth",
+    "variations": [
+      "texture"
+    ],
+    "emoji": "✋🧱",
+    "textId": "gl243",
+    "definitionId": "gl243_def",
+    "image": "images/pg046_im003.png",
+    "imageAlt": "A child lifts the paper to see the tree bark texture printed in colored crayon.",
+    "imageTextId": "pg046_im003"
+  },
+  "tile": {
+    "word": "tile",
+    "definition": "a small flat piece used here as a marker in a game",
+    "variations": [
+      "tile"
+    ],
+    "emoji": "⬜🎯",
+    "textId": "gl244",
+    "definitionId": "gl244_def",
+    "image": "images/pg084_im002.jpg",
+    "imageAlt": "A schoolgirl stands beside a hopscotch board drawn on the ground, with a tile thrown into the first section.",
+    "imageTextId": "pg084_im002"
+  },
+  "toes": {
+    "word": "toes",
+    "definition": "the small parts at the end of your feet",
+    "variations": [
+      "toes"
+    ],
+    "emoji": "🦶👣",
+    "textId": "gl245",
+    "definitionId": "gl245_def"
+  },
+  "tortoise": {
+    "word": "tortoise",
+    "definition": "a land animal with a hard shell that moves slowly",
+    "variations": [
+      "tortoise"
+    ],
+    "emoji": "🐢",
+    "textId": "gl246",
+    "definitionId": "gl246_def",
+    "image": "images/pg076_im011.jpg",
+    "imageAlt": "Tortoise walking with its head extended forward.",
+    "imageTextId": "pg076_im011"
+  },
+  "toss": {
+    "word": "toss",
+    "definition": "to throw something gently up into the air",
+    "variations": [
+      "toss",
+      "tosses",
+      "tossing"
+    ],
+    "emoji": "🖐️⬆️",
+    "textId": "gl247",
+    "definitionId": "gl247_def"
+  },
+  "traditional": {
+    "word": "traditional",
+    "definition": "following old customs or ways of life from the past.",
+    "variations": [
+      "traditional"
+    ],
+    "emoji": "🏺🎭",
+    "textId": "gl248",
+    "definitionId": "gl248_def"
+  },
+  "traditional dance": {
+    "word": "traditional dance",
+    "definition": "a dance that belongs to the customs of a community",
+    "variations": [
+      "traditional dance",
+      "traditional dances"
+    ],
+    "emoji": "💃🕺",
+    "textId": "gl249",
+    "definitionId": "gl249_def"
+  },
+  "tree bark": {
+    "word": "tree bark",
+    "definition": "the outer covering of a tree trunk or branch",
+    "variations": [
+      "tree bark"
+    ],
+    "emoji": "🌳🪵",
+    "textId": "gl251",
+    "definitionId": "gl251_def",
+    "image": "images/pg045_im002_seg004_v1.png",
+    "imageAlt": "Two strips of rough tree bark.",
+    "imageTextId": "pg045_im002_seg004_v1"
+  },
+  "turn": {
+    "word": "turn",
+    "definition": "the time when a person gets a chance to play or act.",
+    "variations": [
+      "turn",
+      "turns"
+    ],
+    "emoji": "🔁🙋",
+    "textId": "gl252",
+    "definitionId": "gl252_def"
+  },
+  "types": {
+    "word": "types",
+    "definition": "kinds or groups of things",
+    "variations": [
+      "types",
+      "type"
+    ],
+    "emoji": "📚🔠",
+    "textId": "gl253",
+    "definitionId": "gl253_def"
+  },
+  "ugali": {
+    "word": "ugali",
+    "definition": "a thick food made from maize flour and water, common in Tanzania",
+    "variations": [
+      "ugali"
+    ],
+    "emoji": "🥣🌽",
+    "textId": "gl254",
+    "definitionId": "gl254_def",
+    "image": "images/pg007_im003.png",
+    "imageAlt": "A mound of ugali on a plate, labelled a.",
+    "imageTextId": "pg007_im003"
+  },
+  "upright": {
+    "word": "upright",
+    "definition": "standing straight up",
+    "variations": [
+      "upright"
+    ],
+    "emoji": "🧍⬆️",
+    "textId": "gl255",
+    "definitionId": "gl255_def"
+  },
+  "upward": {
+    "word": "upward",
+    "definition": "toward a higher place.",
+    "variations": [
+      "upward",
+      "upwards"
+    ],
+    "emoji": "⬆️🚀",
+    "textId": "gl256",
+    "definitionId": "gl256_def"
+  },
+  "value": {
+    "word": "value",
+    "definition": "to think something is important and good",
+    "variations": [
+      "value"
+    ],
+    "emoji": "💛⭐",
+    "textId": "gl257",
+    "definitionId": "gl257_def"
+  },
+  "vegetables": {
+    "word": "vegetables",
+    "definition": "plants or plant parts that people eat, such as spinach or carrots",
+    "variations": [
+      "vegetables"
+    ],
+    "emoji": "🥕🥬",
+    "textId": "gl258",
+    "definitionId": "gl258_def",
+    "image": "images/pg012_im002.jpg",
+    "imageAlt": "Ugali served with green leafy vegetables",
+    "imageTextId": "pg012_im002"
+  },
+  "waist": {
+    "word": "waist",
+    "definition": "the middle part of the body above the hips",
+    "variations": [
+      "waist"
+    ],
+    "emoji": "🧍",
+    "textId": "gl259",
+    "definitionId": "gl259_def"
+  },
+  "water colours": {
+    "word": "water colours",
+    "definition": "paints mixed with water and used for painting",
+    "variations": [
+      "water colours",
+      "water colour",
+      "watercolor"
+    ],
+    "emoji": "🎨💧",
+    "textId": "gl261",
+    "definitionId": "gl261_def"
+  },
+  "weaving": {
+    "word": "weaving",
+    "definition": "making something by crossing materials over and under each other",
+    "variations": [
+      "weaving",
+      "weave"
+    ],
+    "emoji": "🧶🪢",
+    "textId": "gl262",
+    "definitionId": "gl262_def",
+    "image": "images/pg034_im002.jpg",
+    "imageAlt": "Two pupils sitting on a mat and weaving dried plant strips into mats.",
+    "imageTextId": "pg034_im002"
+  },
+  "wet": {
+    "word": "wet",
+    "definition": "covered with water or containing water",
+    "variations": [
+      "wet"
+    ],
+    "emoji": "💧",
+    "textId": "gl263",
+    "definitionId": "gl263_def"
+  },
+  "whistle": {
+    "word": "whistle",
+    "definition": "a small object that makes a loud sound when you blow into it",
+    "variations": [
+      "whistle"
+    ],
+    "emoji": "📯🎶",
+    "textId": "gl264",
+    "definitionId": "gl264_def",
+    "image": "images/pg074_im002.jpg",
+    "imageAlt": "Silver whistle with a red lanyard.",
+    "imageTextId": "pg074_im002"
+  },
+  "winner": {
+    "word": "winner",
+    "definition": "the person who does better than others in a game or contest",
+    "variations": [
+      "winner",
+      "winners"
+    ],
+    "emoji": "🏆🥇",
+    "textId": "gl265",
+    "definitionId": "gl265_def"
+  },
+  "worship": {
+    "word": "worship",
+    "definition": "to pray or show love and honor to God.",
+    "variations": [
+      "worship"
+    ],
+    "emoji": "🙏🕌⛪",
+    "textId": "gl266",
+    "definitionId": "gl266_def"
+  },
+  "wrap": {
+    "word": "wrap",
+    "definition": "a piece of cloth worn around the body",
+    "variations": [
+      "wrap",
+      "wraps",
+      "wrapped"
+    ],
+    "emoji": "🧣",
+    "textId": "gl267",
+    "definitionId": "gl267_def"
+  },
+  "xylophone": {
+    "word": "xylophone",
+    "definition": "a musical instrument with wooden bars that are hit to make sound",
+    "variations": [
+      "xylophone"
+    ],
+    "emoji": "🎼🥁",
+    "textId": "gl268",
+    "definitionId": "gl268_def",
+    "image": "images/pg017_im005.png",
+    "imageAlt": "A wooden xylophone with two mallets",
+    "imageTextId": "pg017_im005"
   }
 }
