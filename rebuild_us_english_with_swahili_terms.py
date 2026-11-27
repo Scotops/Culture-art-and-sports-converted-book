@@ -67,6 +67,7 @@ SPEECH_OVERRIDES = {
 # with the Tanzanian male voice avoids an English voice breaking up words that
 # are not in the short terminology dictionary above.
 SWAHILI_ONLY_IDS = {
+    "pg004_n0010", "pg004_n0013",
     *(f"pg054_n{number:04d}" for number in (5, 6, 7, 8, 9, 10, 11, 12, 13, 14)),
     *(f"pg056_n{number:04d}" for number in (12, 13, 14, 15)),
     *(f"pg057_n{number:04d}" for number in range(6, 18)),
@@ -76,7 +77,16 @@ SWAHILI_ONLY_IDS = {
 
 # Possessive Tanzania's is an English sentence construction.  Keep it as one
 # phrase so the reader never separates the final "s" into a second utterance.
-ENGLISH_ONLY_IDS = {"pg015_n0015", "pg056_n0006"}
+ENGLISH_ONLY_IDS = {"pg004_n0005", "pg015_n0015", "pg056_n0006"}
+
+# Short action instructions and questions can become too fast even at the
+# book-wide learner rate.  These reviewed exceptions need a little more time
+# so a Standard One pupil can follow them comfortably.
+RATE_OVERRIDES = {
+    "pg072_n0003": "-15%",
+    "pg080_n0003": "-15%",
+    "pg083_n0025": "-15%",
+}
 
 
 def fallback_text(text_id: str) -> str:
@@ -102,7 +112,7 @@ def text_for(text_id: str) -> str:
     text = str(text).strip() or fallback_text(text_id)
     # The multiplication mark in song lyrics directs repetition; it must not
     # be spoken as the letter x followed by a number.
-    return re.sub(r"\\bx\\s*2\\b", "repeat twice", re.sub(r"\\bx\\s*3\\b", "repeat three times", text, flags=re.I), flags=re.I)
+    return re.sub(r"\bx\s*2\b", "repeat twice", re.sub(r"\bx\s*3\b", "repeat three times", text, flags=re.I), flags=re.I)
 
 
 def speech_segments(text_id: str, text: str):
@@ -122,10 +132,10 @@ def speech_segments(text_id: str, text: str):
         yield ENGLISH_VOICE, text[position:]
 
 
-async def make_part(text: str, voice: str, temporary: Path) -> bytes:
+async def make_part(text: str, voice: str, temporary: Path, rate: str) -> bytes:
     for attempt in range(1, 5):
         try:
-            await asyncio.wait_for(edge_tts.Communicate(text, voice=voice, rate=RATE).save(str(temporary)), timeout=60)
+            await asyncio.wait_for(edge_tts.Communicate(text, voice=voice, rate=rate).save(str(temporary)), timeout=60)
             data = temporary.read_bytes()
             temporary.unlink(missing_ok=True)
             return data
@@ -141,6 +151,7 @@ async def generate(text_id: str, filename: str, gate: asyncio.Semaphore) -> None
     if not text:
         return
     target = OUT / filename
+    rate = RATE_OVERRIDES.get(text_id.removesuffix("_easy_read"), RATE)
     async with gate:
         parts = []
         for index, (voice, segment) in enumerate(speech_segments(text_id, text)):
@@ -150,7 +161,7 @@ async def generate(text_id: str, filename: str, gate: asyncio.Semaphore) -> None
             if not re.search(r"[A-Za-z0-9]", segment):
                 continue
             temporary = OUT / f"{target.stem}.{uuid.uuid4().hex}.{index}.mp3"
-            parts.append(await make_part(segment, voice, temporary))
+            parts.append(await make_part(segment, voice, temporary, rate))
         staged = OUT / f"{target.stem}.{uuid.uuid4().hex}.new.mp3"
         staged.write_bytes(b"".join(parts))
         for _ in range(20):
