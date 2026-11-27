@@ -102,14 +102,7 @@
       uniform sampler2D frame;
       varying vec2 texturePosition;
       void main() {
-        vec4 colour = texture2D(frame, texturePosition);
-        float dominance = colour.g - max(colour.r, colour.b);
-        float greenStrength = smoothstep(0.055, 0.19, dominance) * smoothstep(0.20, 0.52, colour.g);
-        float spill = smoothstep(0.025, 0.16, dominance);
-        colour.g = mix(colour.g, min(colour.g, max(colour.r, colour.b) * 1.07), spill);
-        float alpha = 1.0 - greenStrength;
-        if (alpha < 0.025) discard;
-        gl_FragColor = vec4(colour.rgb, alpha);
+        gl_FragColor = texture2D(frame, texturePosition);
       }
     `);
     if (!vertex || !fragment) return null;
@@ -167,20 +160,6 @@
       if (video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) return;
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.drawImage(video, 0, 0, canvas.width, canvas.height);
-      const frame = context.getImageData(0, 0, canvas.width, canvas.height);
-      const pixels = frame.data;
-      for (let offset = 0; offset < pixels.length; offset += 4) {
-        const r = pixels[offset] / 255;
-        const g = pixels[offset + 1] / 255;
-        const b = pixels[offset + 2] / 255;
-        const dominance = g - Math.max(r, b);
-        if (g > 0.20 && dominance > 0.055) {
-          const strength = Math.min(1, Math.max(0, (dominance - 0.055) / 0.135));
-          pixels[offset + 1] = Math.min(pixels[offset + 1], Math.max(pixels[offset], pixels[offset + 2]) * 1.07);
-          pixels[offset + 3] = Math.round(255 * (1 - strength));
-        }
-      }
-      context.putImageData(frame, 0, 0);
     };
   };
 
